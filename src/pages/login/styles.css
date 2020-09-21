@@ -1,0 +1,87 @@
+.Login{
+    background-image: url(../../assets/Background.png);
+    display: flex;
+    justify-content: space-between;
+    height: max-content;
+}
+
+.loginFillSpace{
+    width: 1px;
+}
+
+.loginForms{
+    background-color: #F3F3F3;
+    width: 580px;
+    padding-left: 70px;
+    padding-top: 90px;
+    padding-right: 44px;
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+}
+
+.loginForms ul{
+    margin-top: 66px;
+}
+
+.loginForms ul li{
+    display: flex;
+    flex-direction: column;
+    margin-top: 0px;
+    margin-bottom: 52px;
+}
+
+.loginForms ul li div{
+    display: flex;
+    flex-direction: column;
+}
+
+.loginForms ul li div input{
+    font-size: 30px;
+    font-weight: normal;
+    color: #4D4D4D;
+    border-radius: 21px;
+    border: none;
+    padding: 27px 25px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.16);
+    font-family: Oswald;
+}
+
+.loginForms ul li div input::placeholder{
+    color: #E1E1E1;
+    font-size: 30px;
+    font-weight: normal;
+
+}
+
+.loginForms button{
+    font-size: 30px;
+    font-weight: normal;
+    color: #FFFFFF;
+    background-color: #FA7E32;
+    margin-top: 0px;
+    border-radius: 35px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    width: 180px;
+    align-self: center;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.16);
+}
+
+.toRegister{
+    font-size: 20px;
+    font-weight: normal;
+    color: #00A2D8;
+    align-self: center;
+    margin-top: 59px;
+}
+
+button, a{
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
