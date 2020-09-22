@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import './styles.css';
 
 import logoAzul from '../../assets/LogoAzul.png';
-import background from '../../assets/Background.png'
 
 function Login() {
     return(
@@ -12,7 +11,7 @@ function Login() {
                 
             </div>
             <div className='loginForms'>
-                <img src={logoAzul}></img>
+                <img alt='logo' src={logoAzul}></img>
                 <ul>
                     <li><div><input type='email' placeholder='E-MAIL'></input></div></li>
                     <li><div><input type='password' placeholder='SENHA'></input></div></li>
