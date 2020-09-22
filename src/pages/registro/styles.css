@@ -1,15 +1,15 @@
 .Register{
     background-image: url(../../assets/Background.png);
-    display: flex;
-    justify-content: space-between;
-    height: max-content;
-}
-
-.fillSpace{
-    width: 1px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 .registerForms{
+    position: absolute;
+    right: 0px;
     background-color: #F3F3F3;
     width: 580px;
     padding-left: 57px;

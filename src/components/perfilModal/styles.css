@@ -1,0 +1,49 @@
+.modalOverlay{
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    width: fit-content;
+    height: fit-content;
+    margin-top: 80px;
+    font-family: Oswald;
+}
+
+.modal{
+    width: 360px;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.16);
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal img{
+    width: min-content;
+    height: min-content;
+}
+
+.texts{
+    display: flex;
+    flex-direction: column;
+}
+
+.texts b{
+    font-weight: normal;
+    color: #6D6D6D;
+    font-size: 20px;
+}
+
+.texts .username{
+    font-weight: normal;
+    color: #FA7E32;
+    font-size: 40px;
+}
+
+.texts .quit{
+    color: #E61B1B;
+    font-size: 30px;
+    width: min-content;
+    margin-left: 6px;
+}

@@ -6,9 +6,6 @@ import './styles.css';
 function Register() {
     return(
         <div className='Register'>
-            <div className='fillSpace'>
-                
-            </div>
             <div className='registerForms'>
                 <b className='header'>CADASTRO</b>
                 <ul>

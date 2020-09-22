@@ -7,9 +7,6 @@ import logoAzul from '../../assets/LogoAzul.png';
 function Login() {
     return(
         <div className='Login'>
-            <div className='loginFillSpace'>
-                
-            </div>
             <div className='loginForms'>
                 <img alt='logo' src={logoAzul}></img>
                 <ul>

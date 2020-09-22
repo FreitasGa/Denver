@@ -17,11 +17,11 @@ function MainPage(){
                     <b className='subText'>Aprenda como realizar terapia ocupacional utilizando o Modelo Denver para o desenvolvimento cognitivo da criança autista.</b>
                 </div>
                 <div className='images'>
-                    <img className='image' src={image}></img>
+                    <img className='image' alt='kids' src={image}></img>
                 </div>
             </div>
             <div className='videoBack'>
-                <button><img src={leftArrow}></img></button>
+                <button><img alt='previous' src={leftArrow}></img></button>
                 <ul>
                     <li><div><button>play</button><b>Aula 01</b><span>Descrição da Aula</span></div></li>
                     <li><div><button>play</button><b>Aula 01</b><span>Descrição da Aula</span></div></li>
@@ -29,7 +29,7 @@ function MainPage(){
                     <li><div><button>play</button><b>Aula 01</b><span>Descrição da Aula</span></div></li>
                     <li><div><button>play</button><b>Aula 01</b><span>Descrição da Aula</span></div></li>
                 </ul>
-                <button><img src={rightArrow}></img></button>
+                <button><img alt='next' src={rightArrow}></img></button>
             </div>
 
         </div>
