@@ -5,6 +5,7 @@
     bottom: 0;
     left: 0;
     right: 0;
+    overflow-y: auto;
 }
 
 .loginForms{
@@ -18,6 +19,7 @@
     padding-bottom: 80px;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 }
 
 .loginForms ul{
