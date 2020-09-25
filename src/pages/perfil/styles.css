@@ -1,0 +1,104 @@
+.PerfilBody{
+    padding-left: 200px;
+    padding-right: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.PerfilTitle{
+    margin-top: 38px;
+    font-size: 70px;
+    font-weight: normal;
+    color: #00A2D8;
+}
+
+.PerfilOverlay{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-top: 60px;
+    padding-bottom: 30px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.16);
+    display: flex;
+    max-width: 2454px;
+    min-width: 869px;
+}
+
+.PartA{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 400px;
+}
+
+.PerfilImage{
+    width: min-content;
+    height: min-content;
+}
+
+.UserName{
+    font-weight: normal;
+    font-size: 50px;
+    color: #FA7E32;
+
+}
+
+.UserEmail{
+    font-weight: normal;
+    font-size: 20px;
+    color: #474747;
+    margin-left: 35px;
+}
+
+.Line{
+    width: 332px;
+    height: 1px;
+    background-color: #D2D2D2;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.16);
+    margin: 15px 0px;
+}
+
+.emailEditor{
+    height: min-content;
+    width: min-content;
+    margin-left: 9px;
+}
+
+.ProgressTitle{
+    font-size: 30px;
+    font-weight: 300;
+    color: #FA7E32;
+}
+
+.Line2{
+    width: 1px;
+    height: 632px;
+    background-color: #D2D2D2;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.16);
+}
+
+.HistoricTitle{
+    font-size: 30px;
+    font-weight: 300;
+    color: #FA7E32;
+    width: fit-content;
+}
+
+.PartB{
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    max-width: 2040px;
+    height: 600px;
+    padding-left: 28px;
+    padding-right: 28px;
+}
+
+.PartB ul{
+    margin-top: 14px;
+    overflow-y: auto;
+
+}
+

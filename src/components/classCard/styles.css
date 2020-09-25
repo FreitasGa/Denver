@@ -1,0 +1,57 @@
+.ClassList{
+    display: inline-flex;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.ClassOverlay{
+    text-decoration: none;
+    width: 218px;
+    height: 218px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.16);
+    padding: 13px;
+    display: flex;
+    flex-direction: column;
+}
+
+.ClassTitle{
+    font-size: 30px;
+    font-weight: 300;
+    color: #474747;
+}
+
+.ClassQuali{
+    font-size: 14px;
+    font-weight: normal;
+    color: #6D6D6D;
+}
+
+.ClassRating{
+    display: flex;
+}
+
+.ClassRatingIcon{
+    height: min-content;
+    width: min-content;
+    align-self: center;
+    margin-right: 5px;
+}
+
+.ClassPercent{
+    font-size: 50px;
+    font-weight: 400;
+    color: #EC2222;
+    align-self: flex-end;
+}
+
+.ClassStatus{
+    font-size: 18px;
+    font-weight: 300;
+    color: #EC2222;
+    align-self: flex-end;
+}

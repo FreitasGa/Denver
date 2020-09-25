@@ -1,0 +1,28 @@
+.SuggestionsModalOverlay{
+    position: absolute;
+    top: 56px;
+    right: 210px;
+    width: fit-content;
+    height: fit-content;
+    font-family: Oswald;
+}
+
+.SuggestionsModal{
+    width: 280px;
+    height: min-content;
+    padding: 5px 0px;
+    border: none;
+    border-radius: 0px 0px 8px 8px;
+    background-color: #ffffff;
+    box-shadow: 0px 8px 6px 2px rgba(0, 0, 0, 0.16);
+    display: flex;
+    flex-direction: column;
+}
+
+.SuggestionsModal a{
+    font-size: 16px;
+    font-weight: normal;
+    text-decoration: none;
+    width: inherit;
+    padding: 5px 15px 5px 15px;
+}

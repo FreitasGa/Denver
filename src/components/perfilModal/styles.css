@@ -10,6 +10,7 @@
 
 .modal{
     width: 360px;
+    height: min-content;
     padding: 15px 25px;
     border: none;
     border-radius: 8px;
@@ -20,6 +21,11 @@
 }
 
 .modal img{
+    width: min-content;
+    height: min-content;
+}
+
+.modal button{
     width: min-content;
     height: min-content;
 }
@@ -44,6 +50,9 @@
 .texts .quit{
     color: #E61B1B;
     font-size: 30px;
-    width: min-content;
-    margin-left: 6px;
+    width: fit-content;
+}
+
+.quit img{
+    margin-right: 6px;
 }

@@ -9,6 +9,11 @@ import quit from '../../assets/quit.png'
 function PerfilModal(props){
 
     const portalRoot = document.getElementById("portal-root");
+    const page = document.getElementById("root");
+
+    page.addEventListener('click', function(){
+        props.onClose();
+    })
 
     return ReactDOM.createPortal(
         <div className='modalOverlay'>
@@ -16,9 +21,9 @@ function PerfilModal(props){
                 <div className='texts'>
                     <b>VOCÊ ESTÁ LOGADO COMO</b>
                     <b className='username'>Usuário</b>
-                    <div><img src={quit}></img><button className='quit'>SAIR</button></div>
+                    <button className='quit'><img alt='QuitButton' src={quit}></img>SAIR</button>
                 </div>
-                <img src={perfilPreview}></img>
+                <Link to='/perfil' ><img alt='ImagePreview' src={perfilPreview}></img></Link>
                 {props.children}
             </div>
         </div>,
