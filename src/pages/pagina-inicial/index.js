@@ -1,11 +1,15 @@
 import React from 'react';
 import Header from '../../components/header';
+import VideoPreviewMainPage from '../../components/videoPreviewMainPage';
+import data from '../../data'
 import './styles.css';
 
 import image from '../../assets/image.png'
 import leftArrow from '../../assets/left-arrow.png'
 import rightArrow from '../../assets/right-arrow.png'
-import playButton from '../../assets/playButton.png'
+import playButton from '../../assets/playButton.png';
+import lockButton from '../../assets/lockButton.png';
+
 
 function MainPage(){
     
@@ -37,13 +41,8 @@ function MainPage(){
             <div className='videoBack'>
                 <button id='slideLeft' className='slideLeft' onClick={scrollLeft}><img alt='previous' src={leftArrow}></img></button>
                 <ul id='videoContainer'>
-                    <li><div><button><img alt="PlayButton" src={playButton}></img></button><b className='videoTitle'>Aula 01</b><div><b className='videoDescription'>Descrição da Aula</b><b className='videoPercentage'>60%</b></div></div></li>
-                    <li><div><button><img alt="PlayButton" src={playButton}></img></button><b className='videoTitle'>Aula 01</b><div><b className='videoDescription'>Descrição da Aula</b><b className='videoPercentage'>60%</b></div></div></li>
-                    <li><div><button><img alt="PlayButton" src={playButton}></img></button><b className='videoTitle'>Aula 01</b><div><b className='videoDescription'>Descrição da Aula</b><b className='videoPercentage'>60%</b></div></div></li>
-                    <li><div><button><img alt="PlayButton" src={playButton}></img></button><b className='videoTitle'>Aula 01</b><div><b className='videoDescription'>Descrição da Aula</b><b className='videoPercentage'>60%</b></div></div></li>
-                    <li><div><button><img alt="PlayButton" src={playButton}></img></button><b className='videoTitle'>Aula 01</b><div><b className='videoDescription'>Descrição da Aula</b><b className='videoPercentage'>60%</b></div></div></li>
-                    <li><div><button><img alt="PlayButton" src={playButton}></img></button><b className='videoTitle'>Aula 01</b><div><b className='videoDescription'>Descrição da Aula</b><b className='videoPercentage'>60%</b></div></div></li>
-                    <li><div><button><img alt="PlayButton" src={playButton}></img></button><b className='videoTitle'>Aula 01</b><div><b className='videoDescription'>Descrição da Aula</b><b className='videoPercentage'>60%</b></div></div></li>
+                    <VideoPreviewMainPage title='Aula 1' description='Descrição da aula' percentage='60' button={lockButton} image={null} />
+                    {data.map(video => <VideoPreviewMainPage key={video.id} title={video.title} description={video.description} percentage={video.percentage} button={video.isLocked ? lockButton : playButton}/>)}
                 </ul>
                 <button id='slideRight' className='slideRight' onClick={scrollRight}><img alt='next' src={rightArrow}></img></button>
             </div>

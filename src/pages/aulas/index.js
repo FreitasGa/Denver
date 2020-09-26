@@ -1,8 +1,12 @@
 import React from 'react';
 import Header from '../../components/header';
+import VideoPreviewAulas from '../../components/videoPreviewAulas';
+import data from '../../data';
 import './styles.css';
 
 import playButton from '../../assets/playButton.png'
+import lockButton from '../../assets/lockButton.png'
+
 
 function Aulas(){
     return(
@@ -11,15 +15,10 @@ function Aulas(){
             <div className='AulasBody'>
                 <b className='AulasTitle'>Aulas</b>
                 <div className='AulasOverlay'>
-                    <ul id='videoContainer'>
-                        <li><div><button><img alt="PlayButton" src={playButton}></img></button><div><b className='AulasVideoTitle'>Aula 01</b><b className='AulasVideoDescription'>Descrição da Aula</b><b className='AulasVideoPercentage'>60%</b></div></div></li>
-                        <li><div><button><img alt="PlayButton" src={playButton}></img></button><div><b className='AulasVideoTitle'>Aula 01</b><b className='AulasVideoDescription'>Descrição da Aula</b><b className='AulasVideoPercentage'>60%</b></div></div></li>
-                        <li><div><button><img alt="PlayButton" src={playButton}></img></button><div><b className='AulasVideoTitle'>Aula 01</b><b className='AulasVideoDescription'>Descrição da Aula</b><b className='AulasVideoPercentage'>60%</b></div></div></li>
-                        <li><div><button><img alt="PlayButton" src={playButton}></img></button><div><b className='AulasVideoTitle'>Aula 01</b><b className='AulasVideoDescription'>Descrição da Aula</b><b className='AulasVideoPercentage'>60%</b></div></div></li>
-                        <li><div><button><img alt="PlayButton" src={playButton}></img></button><div><b className='AulasVideoTitle'>Aula 01</b><b className='AulasVideoDescription'>Descrição da Aula</b><b className='AulasVideoPercentage'>60%</b></div></div></li>
-                        <li><div><button><img alt="PlayButton" src={playButton}></img></button><div><b className='AulasVideoTitle'>Aula 01</b><b className='AulasVideoDescription'>Descrição da Aula</b><b className='AulasVideoPercentage'>60%</b></div></div></li>
-                        <li><div><button><img alt="PlayButton" src={playButton}></img></button><div><b className='AulasVideoTitle'>Aula 01</b><b className='AulasVideoDescription'>Descrição da Aula</b><b className='AulasVideoPercentage'>60%</b></div></div></li>
-                        <li><div><button><img alt="PlayButton" src={playButton}></img></button><div><b className='AulasVideoTitle'>Aula 01</b><b className='AulasVideoDescription'>Descrição da Aula</b><b className='AulasVideoPercentage'>60%</b></div></div></li>
+                    <ul>
+                        <VideoPreviewAulas title='Aula 1' description='Descrição da aula' percentage='60' button={playButton} image={null} />
+                        {data.map(video => <VideoPreviewAulas key={video.id} title={video.title} description={video.description} percentage={video.percentage} button={video.isLocked ? lockButton : playButton } />)}
+                        
                     </ul>
                 </div>
             </div>

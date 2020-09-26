@@ -6,6 +6,15 @@ import minusIcon from '../../assets/minusIcon.png'
 import naIcon from '../../assets/naIcon.png'
 
 function ClassCard(props){
+
+    if (props.percentage >= 80) {
+        var percentageClass = 'ClassPercentAccept';
+        var statusClass = 'ClassStatusAccept'
+    } else {
+        percentageClass = 'ClassPercent';
+        statusClass = 'ClassStatus'
+    }
+
     return(
         <li className='ClassList'>
             <div className='ClassOverlay'>
@@ -18,8 +27,8 @@ function ClassCard(props){
                     <img src={naIcon} className='ClassRatingIcon'></img>
                     <img src={minusIcon} className='ClassRatingIcon'></img>
                 </div>
-                <b className='ClassPercent'>{props.percentage}%</b>
-                <b className='ClassStatus'>{props.qualified}</b>
+                <b className={percentageClass}>{props.percentage}%</b>
+                <b className={statusClass}>{props.qualified}</b>
             </div>
         </li>
         

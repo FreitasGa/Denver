@@ -1,0 +1,55 @@
+.VideoBody{
+    padding: 0 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.PlayerOverlay{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.PlayerVideoAula{
+    font-size: 70px;
+    font-weight: normal;
+    color: #00A2D8;
+}
+
+.PlayerVideoTitle{
+    font-size: 40px;
+    font-weight: 300;
+    margin-top: -27px;
+    color: #474747;
+}
+
+.Player{
+    width: 1040px;
+    border-radius: 18px;
+}
+
+.VideoListOverlay{
+    background-color: #ffffff;
+    height: min-content;
+    border: none;
+    border-radius: 18px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.16);
+    width: 450px;
+    padding: 20px 10px 20px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.VideoListTitle{
+    font-size: 45px;
+    font-weight: normal;
+    color: #FA7E32;
+    margin-bottom: 14px;
+}
+
+.VideoListBack{
+    overflow-y: auto;
+    max-height: 680px;
+}

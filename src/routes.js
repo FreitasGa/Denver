@@ -6,6 +6,7 @@ import Register from './pages/registro';
 import Login from './pages/login';
 import Perfil from './pages/perfil';
 import Aulas from './pages/aulas';
+import Video from './pages/video';
 
 
 function Routes(){
@@ -17,6 +18,7 @@ function Routes(){
                 <Route path='/login' component={Login}/>
                 <Route path='/perfil' component={Perfil}/>
                 <Route path='/aulas' component={Aulas} />
+                <Route path='/video' component={Video}/>
             </Switch>
         </BrowserRouter>
     )

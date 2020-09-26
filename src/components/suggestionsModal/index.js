@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
 import { Link } from 'react-router-dom';
+import data from '../../data'
 import './styles.css';
 
 function SuggestionsModal(props){
@@ -23,7 +24,8 @@ function SuggestionsModal(props){
     return ReactDOM.createPortal(
         <div className='SuggestionsModalOverlay'>
             <div className='SuggestionsModal'>
-                <Link to='/' onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>Aula 1</Link>
+                <Link to='/video' onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>Aula 1</Link>
+                {data.map(video => <Link key={video.id} to='/video' onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>{video.title}</Link>)}
             </div>
         </div>,
         portalRoot,

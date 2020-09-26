@@ -20,10 +20,10 @@ function PerfilModal(props){
             <div className='modal'>
                 <div className='texts'>
                     <b>VOCÊ ESTÁ LOGADO COMO</b>
-                    <b className='username'>Usuário</b>
+                    <b className='username'> {props.username} </b>
                     <button className='quit'><img alt='QuitButton' src={quit}></img>SAIR</button>
                 </div>
-                <Link to='/perfil' ><img alt='ImagePreview' src={perfilPreview}></img></Link>
+                <Link to='/perfil' ><img alt='ImagePreview' src={props.profile}></img></Link>
                 {props.children}
             </div>
         </div>,

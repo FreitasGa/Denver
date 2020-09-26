@@ -47,6 +47,7 @@
     font-weight: 400;
     color: #EC2222;
     align-self: flex-end;
+    margin-top: 15px;
 }
 
 .ClassStatus{
@@ -54,4 +55,21 @@
     font-weight: 300;
     color: #EC2222;
     align-self: flex-end;
+    margin-top: -15px;
+}
+
+.ClassPercentAccept{
+    font-size: 50px;
+    font-weight: 400;
+    color: #00A2D8;
+    align-self: flex-end;
+    margin-top: 15px;
+}
+
+.ClassStatusAccept{
+    font-size: 18px;
+    font-weight: 300;
+    color: #00A2D8;
+    align-self: flex-end;
+    margin-top: -15px;
 }

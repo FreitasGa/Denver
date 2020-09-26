@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../../components/header';
 import ClassCard from '../../components/classCard';
 import ProgressRing from '../../components/progressRing';
+import data from '../../data';
 import './styles.css';
 
 import perfilPreview2x from '../../assets/perfilPreview-2x.png'
@@ -33,6 +34,7 @@ function Perfil(){
                         <b className='HistoricTitle'>HISTÓRICO DE AULAS</b>
                         <ul>
                             <ClassCard title='Aula 1' percentage='60' qualified='NÃO QUALIFICADO' />
+                            {data.map(video => <ClassCard key={video.id} title={video.title} percentage={video.percentage} qualified={video.isQualified ? 'QUALIFICADO' : 'NÃO QUALIFICADO'} />)}
                         </ul>
                     </div>
                 </div>

@@ -28,56 +28,6 @@
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    max-height: 662px;
+    max-height: 650px;
     width: 1450px;
-}
-
-.AulasOverlay ul li{
-    display: flex;
-    margin: 0px 20px 20px 0px;
-}
-
-.AulasOverlay ul li div{
-    display: flex;
-    flex-direction: row;
-}
-
-.AulasOverlay ul li div button{
-    width: 256px;
-    height: 144px;
-    border: 1px solid;
-    display: flex;
-    justify-content: center;
-}
-
-.AulasOverlay ul li div button img{
-    align-self: center;
-}
-
-.AulasOverlay ul li div div{
-    display: flex;
-    flex-direction: column;
-    padding-right: 10px;
-    padding-left: 10px;
-}
-
-b.AulasVideoTitle{
-    font-weight: normal;
-    font-size: 50px;
-    color: #FA7E32;
-    width: fit-content;
-}
-
-b.AulasVideoDescription{
-    font-weight: normal;
-    font-size: 30px;
-    color:#9F9D9D;
-    width: fit-content;
-}
-
-b.AulasVideoPercentage{
-    font-weight: normal;
-    font-size: 18px;
-    color: #EC2222;
-    width: fit-content;
 }

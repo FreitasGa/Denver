@@ -7,6 +7,7 @@ import './styles.css';
 
 import logo from '../../assets/Logo.png';
 import perfil from '../../assets/Perfil.png';
+import perfilPreview from '../../assets/perfilPreview.png'
 
 
 function Header() {
@@ -26,7 +27,7 @@ function Header() {
                     </ul>
                     <input className='searchbox' onClick={() => setSuggestionsOn(!SuggestionsOn)} type='text' placeholder='Pesquise Aulas'></input>
                     <button className='perfil-image' onClick={() => setIsPerfilVisible(!IsPerfilVisible)} ><img src={perfil} alt='logo'></img></button>
-                    {IsPerfilVisible ? <PerfilModal onClose={() => setIsPerfilVisible(false)} /> : null}
+                    {IsPerfilVisible ? <PerfilModal username='Usuário' profile={perfilPreview} onClose={() => setIsPerfilVisible(false)} /> : null}
                     {SuggestionsOn ? <SuggestionsModal onClose={() => setSuggestionsOn(false)} /> : null}
                 </div>
                 

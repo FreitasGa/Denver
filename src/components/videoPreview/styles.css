@@ -1,0 +1,52 @@
+.VideoPreview{
+    display: inline-flex;
+    margin: 0px 0px 10px 0px;
+}
+
+.videoOverlay_video{
+    display: flex;
+    flex-direction: row;
+}
+
+.VideoPreview div button{
+    width: 256px;
+    height: 144px;
+    border: 1px solid;
+    display: flex;
+    justify-content: center;
+}
+
+.VideoPreview button img{
+    align-self: center;
+}
+
+.videoInfo_video{
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    justify-content: space-between;
+}
+
+.videoInfoA_video{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.videoTitle_video{
+    font-weight: normal;
+    font-size: 22px;
+    color: #6B6B6B;
+}
+
+.videoDescription_video{
+    font-weight: normal;
+    font-size: 18px;
+    color: #9F9D9D;
+}
+
+.videoPercentage_video{
+    font-weight: normal;
+    font-size: 22px;
+    color: #EC2222;
+}

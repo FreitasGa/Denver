@@ -1,0 +1,57 @@
+.VideoPreviewAulas{
+    display: flex;
+    margin: 0px 20px 20px 0px;
+}
+
+.VideoPreviewAulas div{
+    display: flex;
+    flex-direction: row;
+}
+
+.VideoPreviewAulas div button{
+    width: 256px;
+    height: 144px;
+    border: 1px solid;
+    display: flex;
+    justify-content: center;
+}
+
+.VideoPreviewAulas div button img{
+    align-self: center;
+}
+
+.VideoPreviewAulas div div{
+    display: flex;
+    flex-direction: column;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.AulasVideoTitle{
+    font-weight: normal;
+    font-size: 50px;
+    color: #FA7E32;
+    width: fit-content;
+    margin-bottom: -15px;
+}
+
+.AulasVideoDescription{
+    font-weight: normal;
+    font-size: 30px;
+    color:#9F9D9D;
+    width: fit-content;
+}
+
+.AulasVideoPercentage{
+    font-weight: normal;
+    font-size: 18px;
+    color: #EC2222;
+    width: fit-content;
+}
+
+.AulasVideoPercentageAccept{
+    font-weight: normal;
+    font-size: 18px;
+    color: #00A2D8;
+    width: fit-content;
+}
