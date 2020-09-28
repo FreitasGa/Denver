@@ -1,14 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
 import { Link } from 'react-router-dom';
-import data from '../../data'
+import data from '../../videoData'
 import './styles.css';
 
 function SuggestionsModal(props){
 
     const portalRoot = document.getElementById("portal-root");
     const page = document.getElementById("root");
-    
+
+    const Suggestions = data.map(video => <Link key={video.id} to='/video' onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>{video.title}</Link>)
+
+    console.log(props.search)
+
     page.addEventListener('click', function(){
         props.onClose();
     })
@@ -25,7 +29,7 @@ function SuggestionsModal(props){
         <div className='SuggestionsModalOverlay'>
             <div className='SuggestionsModal'>
                 <Link to='/video' onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>Aula 1</Link>
-                {data.map(video => <Link key={video.id} to='/video' onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>{video.title}</Link>)}
+                {Suggestions}
             </div>
         </div>,
         portalRoot,

@@ -1,13 +1,16 @@
 import React from 'react';
 import Header from '../../components/header';
 import VideoPreview from '../../components/videoPreview';
-import data from '../../data'
+import data from '../../videoData'
 import './styles.css';
 
 import playButton from '../../assets/playButton.png';
 import lockButton from '../../assets/lockButton.png';
 
 function Video(){
+
+    
+
     return(
         <div className='Video' >
             <Header/>

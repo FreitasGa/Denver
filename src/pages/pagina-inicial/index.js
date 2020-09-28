@@ -1,7 +1,8 @@
 import React from 'react';
 import Header from '../../components/header';
 import VideoPreviewMainPage from '../../components/videoPreviewMainPage';
-import data from '../../data'
+import data from '../../videoData';
+import user from '../../userData';
 import './styles.css';
 
 import image from '../../assets/image.png'
@@ -30,7 +31,7 @@ function MainPage(){
             <Header />
             <div className='MainPageBody'>
                 <div className='greetings'>
-                    <b className='greet'>Bem vindo, Usuário.</b>
+                    <b className='greet'>Bem vindo, {user.name}.</b>
                     <b className='mainText'>Seja o próprio terapeuta do seu filho!</b>
                     <b className='subText'>Aprenda como realizar terapia ocupacional utilizando o Modelo Denver para o desenvolvimento cognitivo da criança autista.</b>
                 </div>

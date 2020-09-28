@@ -73,9 +73,15 @@
     color: #FA7E32;
 }
 
+.ProgressDescription{
+    font-size: 30px;
+    font-weight: 300;
+    color: #00A2D8;
+}
+
 .Line2{
     width: 1px;
-    height: 590px;
+    height: 610px;
     background-color: #D2D2D2;
     box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.16);
 }

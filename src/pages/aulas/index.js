@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../../components/header';
 import VideoPreviewAulas from '../../components/videoPreviewAulas';
-import data from '../../data';
+import data from '../../videoData';
 import './styles.css';
 
 import playButton from '../../assets/playButton.png'
