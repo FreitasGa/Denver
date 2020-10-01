@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Header from '../../components/header';
 import ClassCard from '../../components/classCard';
 import ProgressRing from '../../components/progressRing';
+import EmailModal from '../../components/emailModal';
+
 import data from '../../videoData';
 import user from '../../userData';
 import './styles.css';
@@ -15,6 +17,25 @@ import naIcon from '../../assets/naIcon.png'
 
 function Perfil(){
 
+    const [imageHandlerOn, setImageHandlerOn] = useState(false)
+
+    const ClassCards = data.filter(card => (
+        card.isSeen
+    ))
+
+    const filteredClassCards = ClassCards.map(video => <ClassCard
+        key={video.id} 
+        title={video.title} 
+        percentage={video.percentage} 
+        qualified={video.isQualified ? 'QUALIFICADO' : 'NÃO QUALIFICADO'} 
+        quest1={video.Quest1} 
+        quest2={video.Quest2} 
+        quest3={video.Quest3} 
+        quest4={video.Quest4} 
+        quest5={video.Quest5}
+        isSeen={video.isSeen} 
+    />)
+
     return(
         <div className='Perfil'>
             <Header/>
@@ -22,7 +43,8 @@ function Perfil(){
                 <b className='PerfilTitle'>Perfil</b>
                 <div className='PerfilOverlay'>
                     <div className='PartA'>
-                        <button><img alt='perfil' src={perfilPreview2x} className='PerfilImage'></img></button>
+                        <button onClick={() => setImageHandlerOn(true)}><img alt='perfil' src={user.Image} className='PerfilImage'></img></button>
+                        {imageHandlerOn ? <EmailModal id='overlay' onClose={() => setImageHandlerOn(false)} /> : null}
                         <b className='UserName'>{user.name}</b>
                         <div>
                             <b className='UserEmail'>{user.mail}</b> <button><img alt='email-editor' src={emailEditor} className='emailEditor'></img></button>
@@ -36,19 +58,7 @@ function Perfil(){
                     <div className='PartB'>
                         <b className='HistoricTitle'>HISTÓRICO DE AULAS</b>
                         <ul>
-                            <ClassCard title='Aula 1' percentage='60' qualified='NÃO QUALIFICADO' />
-                            {data.map(video => <ClassCard 
-                                                key={video.id} 
-                                                title={video.title} 
-                                                percentage={video.percentage} 
-                                                qualified={video.isQualified ? 'QUALIFICADO' : 'NÃO QUALIFICADO'} 
-                                                quest1={video.Quest1} 
-                                                quest2={video.Quest2} 
-                                                quest3={video.Quest3} 
-                                                quest4={video.Quest4} 
-                                                quest5={video.Quest5}
-                                                isSeen={video.isSeen} />)}
-                            
+                           {filteredClassCards}
                         </ul>
                     </div>
                 </div>

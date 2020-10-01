@@ -10,7 +10,6 @@
 .SuggestionsModal{
     width: 280px;
     height: min-content;
-    padding: 5px 0px;
     border: none;
     border-radius: 0px 0px 8px 8px;
     background-color: #ffffff;
@@ -19,7 +18,7 @@
     flex-direction: column;
     overflow-y: hidden;
     overflow-x: hidden;
-    max-height: 210px;
+    max-height: 205px;
 }
 
 .SuggestionsModal a{

@@ -9,7 +9,7 @@ import lockButton from '../../assets/lockButton.png';
 
 function Video(){
 
-    
+    const Videos = data.map(video => <VideoPreview key={video.id} title={video.title} description={video.description} percentage={video.percentage} button={video.isLocked ? lockButton : playButton} image={null}/>)
 
     return(
         <div className='Video' >
@@ -25,12 +25,9 @@ function Video(){
                 <div className='VideoListOverlay'>
                     <b className='VideoListTitle'>Aulas</b>
                     <ul className='VideoListBack'>
-                        <VideoPreview title='Aula 1' description='Descrição da aula' percentage='60' button={playButton} image={null} />
-                        {data.map(video => <VideoPreview key={video.id} title={video.title} description={video.description} percentage={video.percentage} button={video.isLocked ? lockButton : playButton} />)}
+                        {Videos}
                     </ul>
-                    
                 </div>
-                
             </div>
         </div>
     )

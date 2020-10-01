@@ -1,0 +1,27 @@
+.emailModalOverlay{
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.emailModal{
+    background-color: #ffffff;
+    border-radius: 14px;
+    padding: 20px;
+}
+
+.FormsModal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.FormsModal img{
+    max-width: 256px;
+    max-height: 256px;
+}

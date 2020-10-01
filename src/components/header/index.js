@@ -15,7 +15,7 @@ function Header() {
 
     const [IsPerfilVisible, setIsPerfilVisible] = useState(false);
     const [SuggestionsOn, setSuggestionsOn] = useState(false);
-    const [SearchField, setSearchField] = useState();
+    const [SearchField, setSearchField] = useState('');
     
     return(
         <div className='Header'>
@@ -27,7 +27,7 @@ function Header() {
                         <li><Link to='/aulas'>Aulas</Link></li>
                         <li><Link to='/perfil'>Perfil</Link></li>
                     </ul>
-                    <input className='searchbox' onClick={() => setSuggestionsOn(!SuggestionsOn)} onChange={(e) => setSearchField(e.target.value)} type='text' placeholder='Pesquise Aulas'></input>
+                    <input className='searchbox' onInput={() => setSuggestionsOn(true)} onChange={(e) => setSearchField(e.target.value)} type='text' placeholder='Pesquise Aulas'></input>
                     <button className='perfil-image' onClick={() => setIsPerfilVisible(!IsPerfilVisible)} ><img src={perfil} alt='logo'></img></button>
                     {IsPerfilVisible ? <PerfilModal username={user.name} profile={perfilPreview} onClose={() => setIsPerfilVisible(false)} /> : null}
                     {SuggestionsOn ? <SuggestionsModal search={SearchField} onClose={() => setSuggestionsOn(false)} /> : null}

@@ -64,12 +64,6 @@
     max-width: 1380px;
 }
 
-.videoBack ul ::-webkit-scrollbar-button{
-    
-}   
-
-
-
 button.slideRight:active{
     width: 34px;
     height: 39px;

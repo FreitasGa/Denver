@@ -86,7 +86,7 @@ function ClassCard(props){
     }
 
     return(
-        <li className={props.isSeen ? "ClassList" : "ClassListNotSeen"} >
+        <li className="ClassList" >
             <div className='ClassOverlay'>
                 <b className='ClassTitle'>{props.title}</b>
                 <b className='ClassQuali'>QUALIFICAÇÃO DOS QUESTIONÁRIOS</b>

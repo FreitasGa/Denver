@@ -9,9 +9,10 @@ function SuggestionsModal(props){
     const portalRoot = document.getElementById("portal-root");
     const page = document.getElementById("root");
 
-    const Suggestions = data.map(video => <Link key={video.id} to='/video' onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>{video.title}</Link>)
-
-    console.log(props.search)
+    const Suggestions = data.filter(items => (
+        items.title.toLowerCase().includes(props.search.toLowerCase())
+    ))
+    const filteredSuggestions = Suggestions.map(video => <Link key={video.id} to='/video' onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>{video.title}</Link>)
 
     page.addEventListener('click', function(){
         props.onClose();
@@ -28,8 +29,7 @@ function SuggestionsModal(props){
     return ReactDOM.createPortal(
         <div className='SuggestionsModalOverlay'>
             <div className='SuggestionsModal'>
-                <Link to='/video' onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>Aula 1</Link>
-                {Suggestions}
+                {filteredSuggestions}
             </div>
         </div>,
         portalRoot,
