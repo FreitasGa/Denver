@@ -9,8 +9,7 @@ import quit from '../../assets/quit.png'
 function EmailModal(props){
 
     const portalRoot = document.getElementById("portal-root");
-    const [profilePic, setProfilePic] = useState(perfilPreview2x)
-    
+        
     function closeHandler(e){
         if (e.target.id === props.id) {
             props.onClose();
@@ -23,7 +22,6 @@ function EmailModal(props){
         }
     }
 
-    
     return ReactDOM.createPortal(
         <div className='emailModalOverlay' id={props.id} onClick={closeHandler} >
             <div className='emailModal'>

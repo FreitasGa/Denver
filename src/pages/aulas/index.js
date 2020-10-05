@@ -17,7 +17,7 @@ function Aulas(){
             <div className='AulasBody'>
                 <b className='AulasTitle'>Aulas</b>
                 <div className='AulasOverlay'>
-                    <ul>
+                    <ul className='AulasOverlayUl'>
                         {Aulas}                        
                     </ul>
                 </div>

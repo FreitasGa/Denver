@@ -17,10 +17,13 @@ function MainPage(){
     let intervalID = null;
   
     function scrollRight(e) {
-        (e.type === "mousedown" ? holdAdd(this) : letGoAdd());
+        (e.type === "mousedown" ? holdAdd() : letGoAdd());
+        if(e.type === "mouseout"){
+            letGoAdd()
+        }
         const button = e.button;
         const maxScroll = document.getElementById('videoContainer').scrollWidth - document.getElementById('videoContainer').clientWidth;
-        function holdAdd(s) {
+        function holdAdd() {
             intervalID = setInterval(function() {
                 if (button === 0) {
                     document.getElementById('videoContainer').scrollLeft += 20;
@@ -37,10 +40,12 @@ function MainPage(){
     }
 
     function scrollLeft(e) {
-        (e.type === "mousedown" ? holdAdd(this) : letGoAdd());
+        (e.type === "mousedown" ? holdAdd() : letGoAdd());
+        if(e.type === "mouseout"){
+            letGoAdd()
+        }
         const button = e.button;
-
-        function holdAdd(s) {
+        function holdAdd() {
             intervalID = setInterval(function() {
                 if (button === 0) {
                     document.getElementById('videoContainer').scrollLeft -= 20;
@@ -72,11 +77,11 @@ function MainPage(){
                 </div>
             </div>
             <div className='videoBack'>
-                <button id='slideLeft' className='slideLeft' onMouseDown={scrollLeft} onMouseUp={scrollLeft}><img alt='previous' src={leftArrow}></img></button>
+                <button id='slideLeft' className='slideLeft' onMouseOut={scrollLeft} onMouseDown={scrollLeft} onMouseUp={scrollLeft}><img alt='previous' src={leftArrow}></img></button>
                 <ul id='videoContainer'>
                     {VideosMainPage}
                 </ul>
-                <button id='slideRight' className='slideRight' onMouseDown={scrollRight} onMouseUp={scrollRight} ><img alt='next' src={rightArrow}></img></button>
+                <button id='slideRight' className='slideRight' onMouseOut={scrollRight} onMouseDown={scrollRight} onMouseUp={scrollRight} ><img alt='next' src={rightArrow}></img></button>
             </div>
 
         </div>

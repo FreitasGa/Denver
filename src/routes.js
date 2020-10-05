@@ -7,6 +7,8 @@ import Login from './pages/login';
 import Perfil from './pages/perfil';
 import Aulas from './pages/aulas';
 import Video from './pages/video';
+import LandingPage from './pages/landing-page';
+import Questionario from './pages/questionario'
 
 
 function Routes(){
@@ -19,6 +21,8 @@ function Routes(){
                 <Route path='/perfil' component={Perfil}/>
                 <Route path='/aulas' component={Aulas} />
                 <Route path='/video' component={Video}/>
+                <Route path='/landing' component={LandingPage}/>
+                <Route path='/questionario' component={Questionario}/>
             </Switch>
         </BrowserRouter>
     )

@@ -12,19 +12,11 @@ function SuggestionsModal(props){
     const Suggestions = data.filter(items => (
         items.title.toLowerCase().includes(props.search.toLowerCase())
     ))
-    const filteredSuggestions = Suggestions.map(video => <Link key={video.id} to='/video' onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>{video.title}</Link>)
+    const filteredSuggestions = Suggestions.map(video => <Link key={video.id} to='/video'>{video.title}</Link>)
 
     page.addEventListener('click', function(){
         props.onClose();
     })
-
-    function handleMouseOver(e){
-        e.target.style.background = 'rgba(0, 0, 0, 0.05)';
-    }
-
-    function handleMouseOut(e){
-        e.target.style.background = 'white'
-    }
 
     return ReactDOM.createPortal(
         <div className='SuggestionsModalOverlay'>

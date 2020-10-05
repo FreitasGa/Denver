@@ -1,0 +1,142 @@
+.LandingPagePart1{
+	background-image: url(../../assets/Background2.png);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+    color: white;
+	margin-bottom: 79px;	
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.LandingPagePart2{
+	background-color: #092B69;
+}
+
+.rodapeHeader{
+	font:Oswald;
+	text-align: center;
+	font-size: 90px;
+	color: white;
+	padding-top:42px;
+	
+}
+
+.rodapeTexto{
+	font: Oswald;
+	text-align:center;
+	font-size: 35px;
+	color: white;
+	padding-top:24px;
+	margin-bottom: 72px;
+	
+}
+
+.rodapeBloco{
+	background-color: white;
+	border-radius: 64px;
+	height:min-content;
+	width:min-content;
+	display:flex;
+	flex-direction:row;
+	padding-bottom: 50px;
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-top: 50px;
+	
+}
+
+.displayFlex{
+	display:flex;
+	flex-direction:column;
+	
+}
+
+.centralizar{
+	display:flex;
+	flex-direction:row;
+}
+
+.navbarMenu{
+	align-self: flex-end;
+    font-size: 30px;
+    font-weight: lighter;
+    
+}
+
+.texto{
+    font-size: 40px;
+    font:Oswald;
+    justify-content:center ;
+    display:flex;
+	max-width:750px;
+	text-align: center;
+}
+
+.botao{
+    display:flex;
+    justify-content:center;
+    margin-top: 223px;
+    font-size: 40px;
+}
+
+.header{
+    margin-top: 44px;
+    align-self: center;
+}
+
+.navbarMenu li{
+    display:inline-block;
+    margin-top:49px;
+    margin-left: 17px;
+}
+
+.Registrar button{
+    font-size: 30px;
+    font-weight: normal;
+    color: #092B69;
+    background-color: #FFFFFF;
+    border-radius: 35px;
+    width: 180px;
+    align-self: center;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.16);
+    margin-right: 100px;
+}
+
+.eficacia{
+	font-size: 90px;
+	color: #00A2D8;
+	display:flex;
+	justify-content:center;
+}
+
+.paddinga{
+	padding-right:100px;
+}
+
+.paddingb{
+	padding-left:100px;
+}
+
+.coluna{
+	display:flex;
+	flex-direction:column;
+}
+
+.texto1{
+	font-size:35px;
+	font-weight:300px;
+	color: black;
+	max-width: 700px;
+	text-align: justify;
+}
+
+.eficacia{
+	align-self:center;
+	display:flex;
+	flex-direction: row;
+	margin-bottom:139px;
+
+}

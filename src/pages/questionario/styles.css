@@ -1,0 +1,70 @@
+.QuestionarioBody{
+    padding-left: 200px;
+    padding-right: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.QuestionarioTitle{
+    margin-top: 38px;
+    font-size: 70px;
+    font-weight: normal;
+    color: #00A2D8;
+}
+
+.QuestionarioQuestion{
+    margin: 5px 300px 30px 300px;
+    padding: 15px 20px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.16);
+    display: flex;
+    font-size: 30px;
+    font-weight: normal;
+}
+
+.QuestionarioOptions{
+    margin: 0px 300px 0px 240px;
+}
+
+.QuestionarioOptions li{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0;
+}
+
+.QuestionarioAnswer{
+    padding: 10px 15px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 28px;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.16);
+    width: 100%;
+    font-size: 30px;
+    font-weight: normal;
+}
+
+.QuestionarioAnswerInp{
+    align-self: center;
+    margin-right: 25px;
+    width: 40px;
+    height: 40px;
+}
+
+.QuestionarioConfirm{
+    margin: 15px 300px 0 300px;
+    align-self: center;
+
+}
+
+.QuestionarioConfirm button{
+    padding: 11px 74px 13px 74px;
+    background-color: #FA7E32;
+    color: #ffffff;
+    border-radius: 40px;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.16);
+    font-size: 38px;
+    font-weight: normal;
+}

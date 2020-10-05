@@ -10,10 +10,6 @@ import './styles.css';
 
 import perfilPreview2x from '../../assets/perfilPreview-2x.png'
 import emailEditor from '../../assets/emailEditor.png'
-import plusIcon from '../../assets/plusIcon.png'
-import minusIcon from '../../assets/minusIcon.png'
-import naIcon from '../../assets/naIcon.png'
-
 
 function Perfil(){
 
@@ -43,7 +39,7 @@ function Perfil(){
                 <b className='PerfilTitle'>Perfil</b>
                 <div className='PerfilOverlay'>
                     <div className='PartA'>
-                        <button onClick={() => setImageHandlerOn(true)}><img alt='perfil' src={user.Image} className='PerfilImage'></img></button>
+                        <button onClick={() => setImageHandlerOn(false)}><img alt='perfil' src={user.Image} className='PerfilImage'></img></button>
                         {imageHandlerOn ? <EmailModal id='overlay' onClose={() => setImageHandlerOn(false)} /> : null}
                         <b className='UserName'>{user.name}</b>
                         <div>

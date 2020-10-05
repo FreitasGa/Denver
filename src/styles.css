@@ -3,11 +3,16 @@
     padding: 0;
     outline: 0;
     box-sizing: border-box;
-    font-family: Oswald;
+    font-family: oswald;
 }
 
 body {
-    font-family: Oswald;
     background-color: #F3F3F3;
     color: #444;
+}
+
+@font-face{
+    font-family: "oswald";
+    src: url(../src/assets/fonts/Oswald-VariableFont_wght.ttf);
+    font-style: normal;
 }
