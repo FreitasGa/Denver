@@ -7,7 +7,7 @@ function Register() {
     return(
         <div className='Register'>
             <div className='registerForms'>
-                <b className='header'>CADASTRO</b>
+                <b className='headerRegister'>CADASTRO</b>
                 <ul>
                     <li><div><b>Nome</b><input type='text' required placeholder='|'></input></div></li>
                     <li><div><b>Sobrenome</b><input type='text' required placeholder='|'></input></div></li>

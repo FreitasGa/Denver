@@ -15,7 +15,7 @@ function Login() {
                 </ul>
                 <button>FINALIZAR</button>
                 <Link to='/register' className='toRegister'>Não tem uma conta? Cadastre-se!</Link>
-                <Link to='/' className='toRegister'>Esqueçeu sua senha?</Link>
+                <Link className='toRegister'>Esqueçeu sua senha?</Link>
             </div>
         </div>
     )

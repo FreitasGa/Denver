@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef , useEffect } from 'react';
 import Header from '../../components/header';
 import VideoPreviewMainPage from '../../components/videoPreviewMainPage';
 import data from '../../videoData';
@@ -14,51 +14,13 @@ import lockButton from '../../assets/lockButton.png';
 
 function MainPage(){
     
-    let intervalID = null;
-  
-    function scrollRight(e) {
-        (e.type === "mousedown" ? holdAdd() : letGoAdd());
-        if(e.type === "mouseout"){
-            letGoAdd()
-        }
-        const button = e.button;
-        const maxScroll = document.getElementById('videoContainer').scrollWidth - document.getElementById('videoContainer').clientWidth;
-        function holdAdd() {
-            intervalID = setInterval(function() {
-                if (button === 0) {
-                    document.getElementById('videoContainer').scrollLeft += 20;
-                }
-                if (document.getElementById('videoContainer').scrollLeft === maxScroll) {
-                    letGoAdd()
-                }
-            }, 25);
-        }
-        function letGoAdd() {
-            clearInterval(intervalID);
-            intervalID = null;
-        }
+
+    function goToLeft(){
+        document.getElementById('videoContainer').scrollLeft -= 276
     }
 
-    function scrollLeft(e) {
-        (e.type === "mousedown" ? holdAdd() : letGoAdd());
-        if(e.type === "mouseout"){
-            letGoAdd()
-        }
-        const button = e.button;
-        function holdAdd() {
-            intervalID = setInterval(function() {
-                if (button === 0) {
-                    document.getElementById('videoContainer').scrollLeft -= 20;
-                }
-                if (document.getElementById('videoContainer').scrollLeft === 0) {
-                    letGoAdd()
-                }
-            }, 25);
-        }
-        function letGoAdd() {
-            clearInterval(intervalID);
-            intervalID = null;
-        }
+    function goToRight(){
+        document.getElementById('videoContainer').scrollLeft += 276
     }
 
     const VideosMainPage = data.map(video => <VideoPreviewMainPage key={video.id} title={video.title} description={video.description} percentage={video.percentage} button={video.isLocked ? lockButton : playButton} image={null}/>)
@@ -77,11 +39,11 @@ function MainPage(){
                 </div>
             </div>
             <div className='videoBack'>
-                <button id='slideLeft' className='slideLeft' onMouseOut={scrollLeft} onMouseDown={scrollLeft} onMouseUp={scrollLeft}><img alt='previous' src={leftArrow}></img></button>
+                <button id='slideLeft' className='slideLeft' onClick={goToLeft}><img alt='previous' src={leftArrow}></img></button>
                 <ul id='videoContainer'>
                     {VideosMainPage}
                 </ul>
-                <button id='slideRight' className='slideRight' onMouseOut={scrollRight} onMouseDown={scrollRight} onMouseUp={scrollRight} ><img alt='next' src={rightArrow}></img></button>
+                <button id='slideRight' className='slideRight' onClick={goToRight}><img alt='next' src={rightArrow}></img></button>
             </div>
 
         </div>

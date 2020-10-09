@@ -5,7 +5,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    overflow-y: auto;
+    overflow-y: hidden;
     min-width: 590px;
 }
 
@@ -23,7 +23,7 @@
     min-height: 100vh;
 }
 
-.header{
+.headerRegister{
     font-size: 70px;
     font-weight: normal;
     color: #00A2D8;

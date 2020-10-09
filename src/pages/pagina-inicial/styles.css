@@ -44,8 +44,8 @@
 .videoBack{
     margin-top: 20px;
     margin-bottom: 5px;
-    padding-left: 180px;
-    padding-right: 180px;
+    padding-left: 175px;
+    padding-right: 175px;
     padding-top: 24px;
     padding-bottom: 24px;
     height: 256px;
@@ -60,8 +60,11 @@
 
 .videoBack ul {
     overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scroll-snap-align: start;
     display: flex;
-    max-width: 1380px;
+    max-width: 1370px;
 }
 
 button.slideRight:active{

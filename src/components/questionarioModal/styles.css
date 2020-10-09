@@ -61,11 +61,13 @@
     border-radius: 28px;
     box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.16);
     width: 100%;
+    cursor: pointer;
 }
 
 .QuestionarioModalAnswer b{
     font-size: 18px;
     font-weight: normal;
+    cursor: pointer;
 }
 
 .QuestionarioModalAnswerInp{
@@ -73,6 +75,7 @@
     margin-right: 25px;
     width: 30px;
     height: 30px;
+    cursor: pointer;
 }
 
 .QuestionarioModalConfirm{
