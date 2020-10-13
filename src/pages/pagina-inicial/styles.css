@@ -67,6 +67,11 @@
     max-width: 1370px;
 }
 
+.videoBack ul li {
+    scroll-snap-type: x mandatory;
+    scroll-snap-align: start;
+}
+
 button.slideRight:active{
     width: 34px;
     height: 39px;

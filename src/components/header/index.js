@@ -28,8 +28,8 @@ function Header() {
                         <li><Link to='/perfil'>Perfil</Link></li>
                     </ul>
                     <input className='searchbox' onInput={() => setSuggestionsOn(true)} onChange={(e) => setSearchField(e.target.value)} type='text' placeholder='Pesquise Aulas'></input>
-                    <button className='perfil-image' onClick={() => setIsPerfilVisible(!IsPerfilVisible)} ><img src={perfil} alt='logo'></img></button>
-                    {IsPerfilVisible ? <PerfilModal username={user.name} profile={perfilPreview} onClose={() => setIsPerfilVisible(false)} /> : null}
+                    <div className='perfil-imageCropper' onClick={() => setIsPerfilVisible(!IsPerfilVisible)} ><img src={user.Image} className='perfil-image' alt='logo'></img></div>
+                    {IsPerfilVisible ? <PerfilModal username={user.name} profile={user.Image} onClose={() => setIsPerfilVisible(false)} /> : null}
                     {SuggestionsOn ? <SuggestionsModal search={SearchField} onClose={() => setSuggestionsOn(false)} /> : null}
                 </div>
                 

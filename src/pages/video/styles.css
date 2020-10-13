@@ -51,4 +51,5 @@
 .VideoListBack{
     overflow-y: auto;
     max-height: 680px;
+    scroll-behavior: smooth;
 }

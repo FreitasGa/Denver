@@ -40,9 +40,22 @@
     font-size: 16px;
 }
 
-.perfil-image{
-    padding-top: 8px;
+.perfil-imageCropper{
     margin-left: 35px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    width: 54px;
+    height: 54px;
+}
+
+.perfil-image{
+    display: inline;
+    margin: 0 auto;
+    height: 100%;
+    width: auto;
+    cursor: pointer;  
 }
 
 .logo{

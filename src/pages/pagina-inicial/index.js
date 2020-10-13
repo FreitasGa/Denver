@@ -13,7 +13,6 @@ import lockButton from '../../assets/lockButton.png';
 
 
 function MainPage(){
-    
 
     function goToLeft(){
         document.getElementById('videoContainer').scrollLeft -= 276

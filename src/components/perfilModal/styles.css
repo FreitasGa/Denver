@@ -57,3 +57,19 @@
 .quit img{
     margin-right: 6px;
 }
+
+.ImagePreviewCropper{
+    width: 82px;
+    height: 82px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.ImagePreviewCropper img{
+    display: inline;
+    margin: 0 auto;
+    height: 100%;
+    width: auto;
+    cursor: pointer;  
+}

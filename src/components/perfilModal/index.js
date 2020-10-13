@@ -23,8 +23,7 @@ function PerfilModal(props){
                     <b className='username'> {props.username} </b>
                     <button className='quit'><img alt='QuitButton' src={quit}></img>SAIR</button>
                 </div>
-                <Link to='/perfil' ><img alt='ImagePreview' src={props.profile}></img></Link>
-                {props.children}
+                <Link to='/perfil'><div className='ImagePreviewCropper'><img alt='ImagePreview' src={props.profile}></img></div></Link>
             </div>
         </div>,
         portalRoot,

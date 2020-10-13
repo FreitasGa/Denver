@@ -30,4 +30,5 @@
     flex-direction: column;
     max-height: 649px;
     width: 100%;
+    scroll-behavior: smooth;
 }

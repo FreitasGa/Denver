@@ -3,7 +3,7 @@
     padding: 0;
     outline: 0;
     box-sizing: border-box;
-    font-family: oswald;
+    font-family: "oswald";
 }
 
 body {
@@ -14,5 +14,5 @@ body {
 @font-face{
     font-family: "oswald";
     src: url(../src/assets/fonts/Oswald-VariableFont_wght.ttf);
-    font-style: normal;
+    font-weight: 100 900;
 }

@@ -1,142 +1,235 @@
-.LandingPagePart1{
+*{
+	scroll-behavior: smooth;
+}
+
+.landingPage_PartA{
 	background-image: url(../../assets/Background2.png);
 	background-position: center center;
-	background-repeat: no-repeat;
 	background-attachment: fixed;
+	background-repeat: no-repeat;
 	background-size: cover;
-    color: white;
-	margin-bottom: 79px;	
+	color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100vh;
+}
+
+.landingPage_navbar{
+	display: flex;
+	list-style-type: none;
+	padding-top: 45px;
+	justify-content: flex-end;
+	margin-right: 100px;
+	
+}
+
+.landingPage_navbar li{
+	font-family: oswald;
+	margin-left: 16px;
+	font-size: 30px;
+	font-weight: 300;
+	
+}
+
+.landingPage_navbar li a{
+	text-decoration: none;
+}
+
+.landingPage_navlink{
+	color: #092B69;
+	background-color: #ffffff;
+	border-radius: 32px;
+	padding: 3px 46px 6px 46px;
+	margin-left: 23px;
+}
+
+.landingPage_presentation{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: -40px;
+}
+
+.landingPage_presentation img{
+	width: fit-content;
+	height: fit-content;
+}
+
+.landingPage_presentation b {
+	font-size: 40px;
+	text-align: center;
+	font-weight: normal;
+	width: 712px;
+}
+
+.landingPage_scroller{
+	display: flex;
+	flex-direction: column;
+	align-self: center;
+	align-items: center;
+	width: fit-content;
+}
+
+.landingPage_scroller:hover{
+	transform: scale(1.05);
+}
+
+.landingPage_scroller a {
+	font-size: 40px;
+	font-weight: normal;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-decoration: none;
+}
+
+.landingPage_scroller a img {
+	width: fit-content;
+}
+
+.landingPage_PartB{
+	background-color: #092B69;
+	color: #ffffff;
+	padding: 70px 0;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
 
-.LandingPagePart2{
-	background-color: #092B69;
-}
-
-.rodapeHeader{
-	font:Oswald;
-	text-align: center;
+.landingPage_whatDenver{
 	font-size: 90px;
-	color: white;
-	padding-top:42px;
-	
+	font-weight: normal;
 }
 
-.rodapeTexto{
-	font: Oswald;
-	text-align:center;
+.landingPage_whatDenverRes{
+	width: 1096px;
+	text-align: center;
 	font-size: 35px;
-	color: white;
-	padding-top:24px;
-	margin-bottom: 72px;
+	font-weight: 300;
+}
+
+.landingPage_PartC{
+	background-color: #F3F3F3;
+	padding: 80px 126px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.landingPage_efficiency{
+	display: flex;
+	flex-direction: column;
 	
 }
 
-.rodapeBloco{
-	background-color: white;
-	border-radius: 64px;
-	height:min-content;
-	width:min-content;
-	display:flex;
-	flex-direction:row;
-	padding-bottom: 50px;
-	padding-left: 50px;
-	padding-right: 50px;
-	padding-top: 50px;
+.landingPage_efficiencyTittle{
+	color: #00A2D8;
+	font-size: 90px;
+	font-weight: normal;
+	align-self: flex-start;
+}
+
+.landingPage_efficiencyRes{
+	color: #010101;
+	align-self: center;
+	font-size: 35px;
+	font-weight: 200;
+	width: 853px;
+}
+
+.landingPage_PartD{
+	background-color: #F3F3F3;
+	padding: 80px 126px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.landingPage_about{
+	display: flex;
+	flex-direction: column;
 	
 }
 
-.displayFlex{
-	display:flex;
-	flex-direction:column;
-	
+.landingPage_aboutTittle{
+	color: #00A2D8;
+	font-size: 90px;
+	font-weight: normal;
 }
 
-.centralizar{
-	display:flex;
-	flex-direction:row;
+.landingPage_aboutRes{
+	color: #010101;
+	align-self: center;
+	font-size: 35px;
+	font-weight: 200;
+	width: 800px;
 }
 
-.navbarMenu{
-	align-self: flex-end;
-    font-size: 30px;
-    font-weight: lighter;
-    
+.landingPage_PartE{
+	background-color: #092B69;
+	color: #F3F3F3;
+	padding: 60px 215px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100vh;
 }
 
-.texto{
-    font-size: 40px;
-    font:Oswald;
-    justify-content:center ;
-    display:flex;
-	max-width:750px;
+.landingPage_whoWe{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.landingPage_whoWeTittle{
+	font-size: 90px;
+	font-weight: normal;
+}
+
+.landingPage_whoWeRes{
+	font-size: 35px;
+	font-weight: 300;
 	text-align: center;
 }
 
-.botao{
-    display:flex;
-    justify-content:center;
-    margin-top: 223px;
-    font-size: 40px;
-}
-
-.header{
-    margin-top: 44px;
-    align-self: center;
-}
-
-.navbarMenu li{
-    display:inline-block;
-    margin-top:49px;
-    margin-left: 17px;
-}
-
-.Registrar button{
-    font-size: 30px;
-    font-weight: normal;
-    color: #092B69;
-    background-color: #FFFFFF;
-    border-radius: 35px;
-    width: 180px;
-    align-self: center;
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.16);
-    margin-right: 100px;
-}
-
-.eficacia{
-	font-size: 90px;
-	color: #00A2D8;
-	display:flex;
-	justify-content:center;
-}
-
-.paddinga{
-	padding-right:100px;
-}
-
-.paddingb{
-	padding-left:100px;
-}
-
-.coluna{
-	display:flex;
-	flex-direction:column;
-}
-
-.texto1{
-	font-size:35px;
-	font-weight:300px;
-	color: black;
-	max-width: 700px;
-	text-align: justify;
-}
-
-.eficacia{
-	align-self:center;
-	display:flex;
+.landingPage_whoWeImagesOverlay{
+	background-color: #ffffff;
+	border-radius: 64px;
+	padding: 60px 126px;
+	display: flex;
 	flex-direction: row;
-	margin-bottom:139px;
+	justify-content: space-evenly;
+	
+}
 
+.landingPage_whoWeImagesPartA{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.landingPage_whoWeImagesPartA img{
+	width: min-content;
+	height: min-content;
+}
+
+.landingPage_whoWeImage2{
+	margin-top: 60px;
+}
+
+.landingPage_whoWeImagesPartB{
+	margin-top: 30px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.landingPage_whoWeImagesPartB img{
+	width: min-content;
+	height: min-content;
+}
+
+.landingPage_whoWeImage4{
+	margin-bottom: 60px;
 }

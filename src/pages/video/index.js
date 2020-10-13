@@ -18,8 +18,12 @@ function Video(){
         width: '1040',
         playerVars: {
             autoplay: 1,
+            rel: 0,
         },
     } 
+
+    const videoUrl = 'https://www.youtube.com/watch?v=2g811Eo7K8U&feature=emb_logo&ab_channel=detachedsoul21'
+    const videoId = videoUrl.slice(32,43)
 
     let checkInt;
 
@@ -33,12 +37,15 @@ function Video(){
 
         checkInt = setInterval(() => {
             if (player.getPlayerState() === 1) {
-                console.log(player.getCurrentTime())
-                console.log(canPause)
                 if (Math.floor(player.getCurrentTime()) === 5 && canPause) {
+                    if (document.fullscreenElement != null) {
+                        document.exitFullscreen()
+                    }
+                    
                     canPause = false;
                     player.pauseVideo();
                     setQuestModalOn(true);
+                    
                     
                 }
                 if (Math.floor(player.getCurrentTime()) !== 5) {
@@ -56,7 +63,7 @@ function Video(){
                 <div className='PlayerOverlay'>
                     <b className='PlayerVideoAula'>Aula 01</b>
                     <b className='PlayerVideoTitle'>TITULO DA AULA</b>
-                    <Youtube videoId='2g811Eo7K8U' opts={opts} onReady={onPlayerReady}/>
+                    <Youtube videoId={videoId} opts={opts} onReady={onPlayerReady}/>
                     <button onClick={() => setQuestModalOn(!questModalOn)}>Test</button>
                     {questModalOn ? <QuestionarioModal id='overlay' onClose={() => setQuestModalOn(false)} /> : null}
                 </div>
