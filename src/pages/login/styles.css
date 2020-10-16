@@ -56,7 +56,10 @@
 
 }
 
-.loginForms button{
+.loginForms_submit{
+    cursor: pointer;
+    outline: none;
+    border: none;
     font-size: 30px;
     font-weight: normal;
     color: #FFFFFF;

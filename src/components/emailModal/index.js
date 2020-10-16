@@ -30,9 +30,9 @@ function PerfilEditModal(props){
 
     function confirmEdit(){
         user.Image = perfilImage
-        user.name = userName
-        user.surname = userSurname
-        user.mail = userMail
+        userName !== '' ? user.name = userName : user.name = user.name
+        userSurname !== '' ? user.surname = userSurname : user.surname = user.surname
+        userMail !== '' ? user.mail = userMail : user.mail = user.mail
         props.onClose()
     }
 
@@ -41,7 +41,7 @@ function PerfilEditModal(props){
             <div className='perfilEditModal'>
                 <div className='FormsModal'>
                     <div className='perfilEditPartA'>
-                        <label for='fileInput'><div className='imageCropper'><img src={perfilImage} alt='IconChangePerfil' className='perfilEditImage'></img></div><img className='ChangeImageIcon' src={ChangeImageIcon}></img></label>
+                        <label for='fileInput'><div className='imageContainer'><div className='imageCropper'><img src={perfilImage} alt='IconChangePerfil' className='perfilEditImage'></img></div><img className='ChangeImageIcon' src={ChangeImageIcon}></img></div></label>
                         <input id='fileInput' type='file' accept='image/*' onChange={(e) => {
                             const File = e.target.files[0];
                             const ImageFile = window.URL.createObjectURL(File)
@@ -52,8 +52,8 @@ function PerfilEditModal(props){
                     </div>
                     <div className='perfilEditLine'></div>
                     <ul className='perfilEditPartB'>
-                        <li><div><b>Nome</b><input type='text' value={userName} onChange={(e) => {setUserName(e.target.value)}}></input></div></li>
-                        <li><div><b>Sobrenome</b><input type='text' value={userSurname} onChange={(e) => {setUserSurname(e.target.value)}}></input></div></li>
+                        <li><div><b>Nome</b><input type='text' id='userName' value={userName} maxlength="20" onChange={(e) => {setUserName(e.target.value)}}></input></div></li>
+                        <li><div><b>Sobrenome</b><input type='text' value={userSurname} maxlength="20" onChange={(e) => {setUserSurname(e.target.value)}}></input></div></li>
                         <li><div><b>E-mail</b><input type='email' value={userMail} onChange={(e) => {setUserMail(e.target.value)}}></input></div></li>
                         <li><div><b>Senha</b><input type='password' placeholder=''></input></div></li>
                         <button onClick={confirmEdit}>CONFIRMAR</button>

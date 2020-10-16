@@ -27,12 +27,16 @@
     margin: 0 60px;
 }
 
+.imageContainer{
+    position: relative;
+}
+
 .imageCropper{
     width: 164px;
     height: 164px;
-    position: relative;
     overflow: hidden;
-    border-radius: 50%;
+    border-radius: 50%; 
+    
 }
 
 .perfilEditImage{
@@ -42,13 +46,13 @@
     width: auto;
     cursor: pointer;  
     object-fit: cover;
-    position: relative;
+   
 }
 
 .ChangeImageIcon{
     position: absolute;
-    right: 59%;
-    top: 48%;
+    right: 0;
+    bottom: 5%;
     cursor: pointer;
 }
 
@@ -61,6 +65,9 @@
     font-size: 50px;
     font-weight: 400;
     color: #FA7E32;
+    max-width: 160px;
+    word-wrap: break-word;
+    min-height: 74px;
 }
 
 .perfilEditMail{
@@ -69,6 +76,9 @@
     font-weight: 400;
     color: #474747;
     margin-top: -10px;
+    max-width: 164px;
+    word-wrap: break-word;
+    min-height: 30px;
 }
 
 .perfilEditLine{

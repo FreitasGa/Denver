@@ -62,7 +62,10 @@
     color: #E1E1E1;
 }
 
-.registerForms button{
+.registerForms_submit{
+    outline: none;
+    border: none;
+    cursor: pointer;
     font-size: 30px;
     font-weight: normal;
     color: #FFFFFF;

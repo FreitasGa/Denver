@@ -69,6 +69,7 @@
 	align-self: center;
 	align-items: center;
 	width: fit-content;
+	transition: all 0.4s;
 }
 
 .landingPage_scroller:hover{

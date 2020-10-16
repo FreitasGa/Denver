@@ -15,7 +15,7 @@ function Register() {
                     <li><div><b>Data de nascimento</b><input type='date' required></input></div></li>
                     <li><div><b>Senha</b><input type='password' required placeholder='|'></input></div></li>
                 </ul>
-                <button type='submit'>FINALIZAR</button>
+                <input className='registerForms_submit' type='submit' value='FINALIZAR'></input>
                 <Link to='/login' className='toLogin'>Já possui uma conta? Entre!</Link>
             </div>
         </div>
