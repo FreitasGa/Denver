@@ -5,18 +5,18 @@ import "./styles.css";
 import api from "../../services/api";
 
 function Register() {
-  const [user, setUser] = useState({
-    name: "",
-    age: "",
-    mail: "",
-    birth: "",
-    pass: "",
-  });
+  const user = {
+    name: '',
+    age: '',
+    mail: '',
+    pass: '',
+    birth: '',
+  }
 
-  const [userName, setUserName] = useState({
+  const userName = {
     name: "",
     surname: "",
-  })
+  }
 
   function dataHandler() {
     const current = new Date();
@@ -32,16 +32,18 @@ function Register() {
     if (currentMonth < month || currentDay < day) {
       age--;
     }
-
-    setUser({name: userName.name + userName.surname})
+    user.age = age;
+    user.name = userName.name + " " + userName.surname;
   }
 
   function register() {
-    console.log("> running")
     if (user.birth){
       dataHandler();
     }
-    
+
+    console.log("> running")
+    console.log(user)
+
     api.post("/users", user)
       .then(res => {
         console.log(res);
@@ -59,7 +61,7 @@ function Register() {
               <b>Nome</b>
               <input
                 type="text"
-                onChange={(e) => setUserName({ name: e.target.value })}
+                onChange={(e) => userName.name = e.target.value}
                 required
                 placeholder="|"
               ></input>
@@ -70,7 +72,7 @@ function Register() {
               <b>Sobrenome</b>
               <input
                 type="text"
-                onChange={(e) => setUserName({ surname: e.target.value })}
+                onChange={(e) => userName.surname = e.target.value}
                 required
                 placeholder="|"
               ></input>
@@ -81,7 +83,7 @@ function Register() {
               <b>E-mail</b>
               <input
                 type="email"
-                onChange={(e) => setUser({ mail: e.target.value })}
+                onChange={(e) => user.mail = e.target.value}
                 required
                 placeholder="|"
               ></input>
@@ -92,7 +94,7 @@ function Register() {
               <b>Data de nascimento</b>
               <input
                 type="date"
-                onChange={(e) => setUser({ birth: e.target.value })}
+                onChange={(e) => user.birth = e.target.value}
                 required
               ></input>
             </div>
@@ -102,7 +104,7 @@ function Register() {
               <b>Senha</b>
               <input
                 type="password"
-                onChange={(e) => setUser({ pass: e.target.value })}
+                onChange={(e) => user.pass = e.target.value}
                 required
                 placeholder="|"
               ></input>
