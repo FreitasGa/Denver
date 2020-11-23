@@ -1,133 +1,176 @@
-.PerfilBody{
-    padding-left: 200px;
-    padding-right: 200px;
-    display: flex;
+.Perfil {
+  display: flex;
+  flex-direction: column;
+}
+
+.PerfilBody {
+  padding-left: 10.416666666666666vw;
+  padding-right: 10.416666666666666vw;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.PerfilTitle {
+  margin-top: 38px;
+  font-size: 70px;
+  font-weight: normal;
+  color: #00a2d8;
+}
+
+.PerfilOverlay {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-top: 60px;
+  padding-bottom: 30px;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.16);
+  display: flex;
+  max-width: max-content;
+  min-width: min-content;
+  max-height: 710px;
+}
+
+.PartA {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 400px;
+}
+
+.PerfilImageCropper {
+  width: 164px;
+  height: 164px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.PerfilImage {
+  display: inline;
+  margin: 0 auto;
+  height: 100%;
+  width: auto;
+  cursor: pointer;
+}
+.UserName {
+  font-weight: normal;
+  font-size: 50px;
+  color: #fa7e32;
+  margin-bottom: -15px;
+}
+
+.UserEmail {
+  font-weight: normal;
+  font-size: 20px;
+  color: #474747;
+  margin-left: 30px;
+}
+
+.Line {
+  width: 332px;
+  height: 1px;
+  background-color: #d2d2d2;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.16);
+  margin: 15px 0px;
+}
+
+.emailEditor {
+  height: min-content;
+  width: min-content;
+  margin-left: 9px;
+  cursor: pointer;
+}
+
+.emailEditor:hover {
+  transform: scale(1.1);
+}
+
+.ProgressTitle {
+  font-size: 30px;
+  font-weight: 300;
+  color: #fa7e32;
+}
+
+.ProgressDescription {
+  font-size: 30px;
+  font-weight: 300;
+  color: #00a2d8;
+}
+
+.Line2 {
+  width: 1px;
+  height: 610px;
+  background-color: #d2d2d2;
+  box-shadow: 0px 0px 6px rgba(75, 74, 74, 0.16);
+}
+
+.HistoricTitle {
+  font-size: 30px;
+  font-weight: 300;
+  color: #fa7e32;
+  width: fit-content;
+}
+
+.PartB {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  max-width: 2040px;
+  max-height: 600px;
+  padding-left: 28px;
+  padding-right: 28px;
+}
+
+.PartB ul {
+  margin-top: 14px;
+  overflow-y: auto;
+  max-width: max-content;
+  width: fit-content;
+  min-width: min-content;
+}
+
+.PartB ul li {
+  transition: all 0.4s;
+}
+
+.PartB ul li:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 800px){
+  .PerfilOverlay{
     flex-direction: column;
-}
-
-.PerfilTitle{
-    margin-top: 38px;
-    font-size: 70px;
-    font-weight: normal;
-    color: #00A2D8;
-}
-
-.PerfilOverlay{
-    margin-top: 5px;
-    margin-bottom: 5px;
-    padding-top: 60px;
-    padding-bottom: 30px;
-    background-color: #ffffff;
-    border: none;
-    border-radius: 20px;
-    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.16);
-    display: flex;
-    max-width: 2454px;
-    min-width: 869px;
-    max-height: 710px;
-}
-
-.PartA{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-width: 400px;
-}
-
-.PerfilImageCropper{
-    width: 164px;
-    height: 164px;
-    position: relative;
-    overflow: hidden;
-    border-radius: 50%;
-}
-
-.PerfilImage{
-    display: inline;
-    margin: 0 auto;
-    height: 100%;
-    width: auto;
-    cursor: pointer;  
-}
-.UserName{
-    font-weight: normal;
-    font-size: 50px;
-    color: #FA7E32;
-    margin-bottom: -15px;
-}
-
-.UserEmail{
-    font-weight: normal;
-    font-size: 20px;
-    color: #474747;
-    margin-left: 30px;
-}
-
-.Line{
-    width: 332px;
-    height: 1px;
-    background-color: #D2D2D2;
-    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.16);
-    margin: 15px 0px;
-}
-
-.emailEditor{
-    height: min-content;
-    width: min-content;
-    margin-left: 9px;
-    cursor: pointer;
-}
-
-.emailEditor:hover{
-    transform: scale(1.1);
-}
-
-.ProgressTitle{
-    font-size: 30px;
-    font-weight: 300;
-    color: #FA7E32;
-}
-
-.ProgressDescription{
-    font-size: 30px;
-    font-weight: 300;
-    color: #00A2D8;
-}
-
-.Line2{
-    width: 1px;
-    height: 610px;
-    background-color: #D2D2D2;
-    box-shadow: 0px 0px 6px rgba(75, 74, 74, 0.16);
-}
-
-.HistoricTitle{
-    font-size: 30px;
-    font-weight: 300;
-    color: #FA7E32;
+    max-height: fit-content;
+    min-width: fit-content;
     width: fit-content;
-}
+  }
 
-.PartB{
-    display: flex;
-    flex-direction: column;
-    width: max-content;
-    max-width: 2040px;
-    max-height: 600px;
-    padding-left: 28px;
-    padding-right: 28px;
-}
+  .PartA{
+    align-self: center;
+    min-width: fit-content;
+    width: fit-content;
+  }
 
-.PartB ul{
-    margin-top: 14px;
-    overflow-y: auto;
+  .Line2{
+    align-self: center;
+    height: 1px;
+    width: 80%;
+    margin: 50px 0;
+  }
 
-}
+  .PartB{
+    align-items: center;
+  }
 
-.PartB ul li{
-    transition: all 0.4s;
-}
+  .PartB ul{
+    align-items: center;
+    width: fit-content;
+  }
 
-.PartB ul li:hover{
-    transform: scale(1.05);
+  .PartB ul li{
+    align-self: center;
+  }
 }

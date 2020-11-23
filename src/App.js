@@ -1,8 +1,8 @@
-import React from 'react';
-import { Route } from 'react-router-dom';
-import MainPage from './pages/pagina-inicial';
-import Routes from './routes';
-import './styles.css';
+import React from "react";
+import { Route } from "react-router-dom";
+import MainPage from "./pages/pagina-inicial";
+import Routes from "./routes";
+import "./styles.css";
 
 function App() {
   return (

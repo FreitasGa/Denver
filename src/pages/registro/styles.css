@@ -1,98 +1,98 @@
-.Register{
-    background-image: url(../../assets/Background.png);
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    overflow-y: hidden;
-    min-width: 590px;
+.Register {
+  background-image: url(../../assets/Background.png);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow-y: hidden;
+  min-width: 590px;
 }
 
-.registerForms{
-    position: absolute;
-    right: 0px;
-    background-color: #F3F3F3;
-    width: 580px;
-    padding-left: 57px;
-    padding-top: 80px;
-    padding-right: 38px;
-    padding-bottom: 60px;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+.registerForms {
+  position: absolute;
+  right: 0px;
+  background-color: #f3f3f3;
+  width: 580px;
+  padding-left: 57px;
+  padding-top: 80px;
+  padding-right: 38px;
+  padding-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-.headerRegister{
-    font-size: 70px;
-    font-weight: normal;
-    color: #00A2D8;
-    
+.headerRegister {
+  font-size: 70px;
+  font-weight: normal;
+  color: #00a2d8;
 }
 
-.registerForms ul li{
-    display: flex;
-    flex-direction: column;
-    margin-top: 8px;
+.registerForms ul li {
+  display: flex;
+  flex-direction: column;
+  margin-top: 8px;
 }
 
-.registerForms ul li div{
-    display: flex;
-    flex-direction: column;
+.registerForms ul li div {
+  display: flex;
+  flex-direction: column;
 }
 
-.registerForms ul li div b{
-    font-size: 30px;
-    font-weight: normal;
-    color: #4D4D4D;
+.registerForms ul li div b {
+  font-size: 30px;
+  font-weight: normal;
+  color: #4d4d4d;
 }
 
-.registerForms ul li div input{
-    font-size: 23px;
-    font-weight: normal;
-    color: #4D4D4D;
-    border-radius: 9px;
-    border: none;
-    padding: 16px 25px;
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.16);
-    font-family: Oswald;
+.registerForms ul li div input {
+  font-size: 23px;
+  font-weight: normal;
+  color: #4d4d4d;
+  border-radius: 9px;
+  border: none;
+  padding: 16px 25px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.16);
+  font-family: Oswald;
 }
 
-.registerForms ul li div input::placeholder{
-    color: #E1E1E1;
+.registerForms ul li div input::placeholder {
+  color: #e1e1e1;
 }
 
-.registerForms_submit{
-    outline: none;
-    border: none;
-    cursor: pointer;
-    font-size: 30px;
-    font-weight: normal;
-    color: #FFFFFF;
-    background-color: #FA7E32;
-    border-radius: 35px;
-    margin-top: 38px;
-    padding-top: 7px;
-    padding-bottom: 6px;
-    width: 180px;
-    align-self: center;
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.16);
+.registerForms_submit {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 30px;
+  font-weight: normal;
+  color: #ffffff;
+  background-color: #fa7e32;
+  border-radius: 35px;
+  margin-top: 38px;
+  padding-top: 7px;
+  padding-bottom: 6px;
+  width: 180px;
+  align-self: center;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.16);
 }
 
-.toLogin{
-    font-size: 20px;
-    font-weight: normal;
-    color: #00A2D8;
-    align-self: center;
-    margin-top: 47px;
+.toLogin {
+  font-size: 20px;
+  font-weight: normal;
+  color: #00a2d8;
+  align-self: center;
+  margin-top: 47px;
 }
 
-button, a{
-	background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
+button,
+a {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 }

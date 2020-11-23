@@ -13,24 +13,30 @@
     right: 0px;
     background-color: #F3F3F3;
     width: 580px;
-    padding-left: 70px;
-    padding-top: 90px;
-    padding-right: 44px;
-    padding-bottom: 80px;
+    padding-left: 3.6458333333333335vw;
+    padding-top: 9.316770186335404vh;
+    padding-right:  2.2916666666666665vw;
+    padding-bottom: 8.281573498964804vh;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
+.loginForms img{
+   align-self: center;
+   width: auto;
+   height: auto;
+}
+
 .loginForms ul{
-    margin-top: 66px;
+    margin-top: 6.832298136645963vh;
 }
 
 .loginForms ul li{
     display: flex;
     flex-direction: column;
     margin-top: 0px;
-    margin-bottom: 52px;
+    margin-bottom: 5.383022774327122vh;
 }
 
 .loginForms ul li div{
@@ -66,8 +72,8 @@
     background-color: #FA7E32;
     margin-top: 0px;
     border-radius: 35px;
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding-top: 1.2422360248447204vh;
+    padding-bottom: 1.2422360248447204vh;
     width: 180px;
     align-self: center;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.16);
@@ -78,11 +84,7 @@
     font-weight: normal;
     color: #00A2D8;
     align-self: center;
-    margin-top: 59px;
-}
-
-.noPass{
-
+    margin-top: 6.107660455486543vh;
 }
 
 button, a{
