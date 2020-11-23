@@ -7,14 +7,18 @@ import api from "../../services/api";
 function Register() {
   const [user, setUser] = useState({
     name: "",
-    surname: "",
     age: "",
     mail: "",
     birth: "",
     pass: "",
   });
 
-  function birthHandler() {
+  const [userName, setUserName] = useState({
+    name: "",
+    surname: "",
+  })
+
+  function dataHandler() {
     const current = new Date();
 
     const year = parseFloat(user.birth.slice(0, 4));
@@ -28,12 +32,14 @@ function Register() {
     if (currentMonth < month || currentDay < day) {
       age--;
     }
+
+    setUser({name: userName.name + userName.surname})
   }
 
   function register() {
     console.log("> running")
     if (user.birth){
-      birthHandler();
+      dataHandler();
     }
     
     api.post("/users", user)
@@ -53,7 +59,7 @@ function Register() {
               <b>Nome</b>
               <input
                 type="text"
-                onChange={(e) => setUser({ name: e.target.value })}
+                onChange={(e) => setUserName({ name: e.target.value })}
                 required
                 placeholder="|"
               ></input>
@@ -64,7 +70,7 @@ function Register() {
               <b>Sobrenome</b>
               <input
                 type="text"
-                onChange={(e) => setUser({ surname: e.target.value })}
+                onChange={(e) => setUserName({ surname: e.target.value })}
                 required
                 placeholder="|"
               ></input>
