@@ -31,6 +31,7 @@ function Register() {
   }
 
   function register() {
+    console.log("> running")
     if (user.birth){
       birthHandler();
     }
