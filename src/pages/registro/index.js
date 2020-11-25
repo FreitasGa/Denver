@@ -8,9 +8,9 @@ function Register() {
   const user = {
     name: '',
     age: '',
-    mail: '',
-    pass: '',
-    birth: '',
+    email: '',
+    password: '',
+    birthdate: '',
   }
 
   const userName = {
@@ -42,7 +42,6 @@ function Register() {
     }
 
     console.log("> running")
-    console.log(user)
 
     api.post("/users", user)
       .then(res => {
