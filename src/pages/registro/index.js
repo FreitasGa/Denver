@@ -22,12 +22,12 @@ function Register() {
   function dataHandler() {
     const current = new Date();
 
-    const year = parseFloat(user.birth.slice(0, 4));
-    const month = parseFloat(user.birth.slice(5, 7));
-    const day = parseFloat(user.birth.slice(8, 10));
+    const year = parseFloat(user.birthdate.slice(0, 4));
+    const month = parseFloat(user.birthdate.slice(5, 7));
+    const day = parseFloat(user.birthdate.slice(8, 10));
 
-    const date = new Date(year, month, day)
-    user.birthdate = date
+    const date = new Date(year, month, day);
+    user.birthdate = date;
 
     const currentYear = current.getFullYear();
     const currentMonth = current.getMonth() + 1;
@@ -37,16 +37,18 @@ function Register() {
     if (currentMonth < month || currentDay < day) {
       age--;
     }
+
     user.age = age;
     user.name = userName.name + " " + userName.surname;
   }
 
   function register() {
-    if (user.birth){
+    if (user.birthdate){
       dataHandler();
     }
 
     console.log("> running")
+    console.log(user)
 
     api.post("/users", user, cors())
       .then(res => {
