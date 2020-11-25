@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import cors from "cors"
 import { Link } from "react-router-dom";
 import "./styles.css";
 
@@ -24,6 +25,10 @@ function Register() {
     const year = parseFloat(user.birth.slice(0, 4));
     const month = parseFloat(user.birth.slice(5, 7));
     const day = parseFloat(user.birth.slice(8, 10));
+
+    const date = new Date(year, month, day)
+    user.birthdate = date
+
     const currentYear = current.getFullYear();
     const currentMonth = current.getMonth() + 1;
     const currentDay = current.getDate();
@@ -43,7 +48,7 @@ function Register() {
 
     console.log("> running")
 
-    api.post("/users", user)
+    api.post("/users", user, cors())
       .then(res => {
         console.log(res);
         console.log(res.data);
@@ -82,7 +87,7 @@ function Register() {
               <b>E-mail</b>
               <input
                 type="email"
-                onChange={(e) => user.mail = e.target.value}
+                onChange={(e) => user.email = e.target.value}
                 required
                 placeholder="|"
               ></input>
@@ -93,7 +98,7 @@ function Register() {
               <b>Data de nascimento</b>
               <input
                 type="date"
-                onChange={(e) => user.birth = e.target.value}
+                onChange={(e) => user.birthdate = e.target.value}
                 required
               ></input>
             </div>
@@ -103,7 +108,7 @@ function Register() {
               <b>Senha</b>
               <input
                 type="password"
-                onChange={(e) => user.pass = e.target.value}
+                onChange={(e) => user.password = e.target.value}
                 required
                 placeholder="|"
               ></input>
