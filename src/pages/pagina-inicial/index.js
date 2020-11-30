@@ -3,6 +3,8 @@ import Header from "../../components/header";
 import VideoPreviewMainPage from "../../components/videoPreviewMainPage";
 import data from "../../videoData";
 import user from "../../userData";
+import cors from "cors";
+import api from "../../services/api";
 import "./styles.css";
 
 import image from "../../assets/image.png";
@@ -12,6 +14,26 @@ import playButton from "../../assets/playButton.png";
 import lockButton from "../../assets/lockButton.png";
 
 function MainPage() {
+  function getUserData(){
+    let token;
+
+    api.post("/sessions", {email: "pass@ex.com", password: "123123"}, cors()).then((res) => {
+      console.log(res);
+      console.log(res.data);
+      token = res.data.token;
+
+      api.get("/auth", {headers: {authorization: `bearer ${token}`}}).then((res) => {
+        console.log(res);
+        console.log(res.data);
+
+        api.get("/users", {headers: {authorization: `bearer ${token}`}}).then((res) => {
+          console.log(res);
+          console.log(res.data);
+        })
+      });
+    })
+  }
+
   function goToLeft() {
     document.getElementById("videoContainer").scrollLeft -= 276;
   }
@@ -30,6 +52,8 @@ function MainPage() {
       image={null}
     />
   ));
+
+  window.addEventListener('load', getUserData());
 
   return (
     <div className="MainPage">

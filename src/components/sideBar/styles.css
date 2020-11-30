@@ -8,13 +8,29 @@
 }
 
 .SideBar{
-    width: 360px;
-    height: min-content;
-    padding: 15px 25px;
+    width: max-content;
+    height: 93vh;
+    overflow: hidden;
     border: none;
-    border-radius: 8px;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.16);
     background-color: #ffffff;
     display: flex;
     justify-content: space-between;
+}
+
+.SideBar ul li{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.SideBar ul li a{
+    text-decoration: none;
+    color: #092B69;
+    font-size: 30px;
+    padding: 10px 40px;
+}
+
+.SideBar ul li a:hover{
+    background-color: rgba(0, 0, 0, 0.05);
 }

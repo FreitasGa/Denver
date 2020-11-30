@@ -1,10 +1,37 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, Redirect } from "react-router-dom";
+import cors from "cors";
+import api from "../../services/api";
 import "./styles.css";
 
 import logoAzul from "../../assets/LogoAzul.png";
 
 function Login() {
+  const [state, setState] = useState(false)
+
+  const user = {
+    email: "",
+    password: "",
+  };
+
+  function logar() {
+    let token;
+
+    api.post("/sessions", user, cors()).then((res) => {
+      console.log(res);
+      console.log(res.data);
+      token = res.data.token;
+
+      api.get("/auth", {headers: {authorization: `bearer ${token}`}}).then((res) => {
+        console.log(res);
+        console.log(res.data);
+        if(res.data === "Authenticated."){
+          setState(true);
+        }
+      });
+    });
+  }
+
   return (
     <div className="Login">
       <div className="loginForms">
@@ -12,12 +39,22 @@ function Login() {
         <ul>
           <li>
             <div>
-              <input type="email" placeholder="E-MAIL" required></input>
+              <input
+                type="email"
+                onChange={(e) => (user.email = e.target.value)}
+                placeholder="E-MAIL"
+                required
+              ></input>
             </div>
           </li>
           <li>
             <div>
-              <input type="password" placeholder="SENHA" required></input>
+              <input
+                type="password"
+                onChange={(e) => (user.password = e.target.value)}
+                placeholder="SENHA"
+                required
+              ></input>
             </div>
           </li>
         </ul>
@@ -25,11 +62,13 @@ function Login() {
           className="loginForms_submit"
           type="submit"
           value="FINALIZAR"
+          onClick={logar}
         ></input>
         <Link to="/register" className="toRegister">
           Não tem uma conta? Cadastre-se!
         </Link>
         <Link className="toRegister">Esqueceu sua senha?</Link>
+        {state ? <Redirect to="/" /> : null}
       </div>
     </div>
   );

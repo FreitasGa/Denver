@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import cors from "cors"
+import cors from "cors";
 import { Link } from "react-router-dom";
 import "./styles.css";
 
@@ -7,17 +7,17 @@ import api from "../../services/api";
 
 function Register() {
   const user = {
-    name: '',
-    age: '',
-    email: '',
-    password: '',
-    birthdate: '',
-  }
+    name: "",
+    age: "",
+    email: "",
+    password: "",
+    birthdate: "",
+  };
 
   const userName = {
     name: "",
     surname: "",
-  }
+  };
 
   function dataHandler() {
     const current = new Date();
@@ -43,18 +43,17 @@ function Register() {
   }
 
   function register() {
-    if (user.birthdate){
+    if (user.birthdate) {
       dataHandler();
     }
 
-    console.log("> running")
-    console.log(user)
+    console.log("> running");
+    console.log(user);
 
-    api.post("/users", user, cors())
-      .then(res => {
-        console.log(res);
-        console.log(res.data);
-      })
+    api.post("/users", user, cors()).then((res) => {
+      console.log(res);
+      console.log(res.data);
+    });
   }
 
   return (
@@ -67,7 +66,7 @@ function Register() {
               <b>Nome</b>
               <input
                 type="text"
-                onChange={(e) => userName.name = e.target.value}
+                onChange={(e) => (userName.name = e.target.value)}
                 required
                 placeholder="|"
               ></input>
@@ -78,7 +77,7 @@ function Register() {
               <b>Sobrenome</b>
               <input
                 type="text"
-                onChange={(e) => userName.surname = e.target.value}
+                onChange={(e) => (userName.surname = e.target.value)}
                 required
                 placeholder="|"
               ></input>
@@ -89,7 +88,7 @@ function Register() {
               <b>E-mail</b>
               <input
                 type="email"
-                onChange={(e) => user.email = e.target.value}
+                onChange={(e) => (user.email = e.target.value)}
                 required
                 placeholder="|"
               ></input>
@@ -100,7 +99,7 @@ function Register() {
               <b>Data de nascimento</b>
               <input
                 type="date"
-                onChange={(e) => user.birthdate = e.target.value}
+                onChange={(e) => (user.birthdate = e.target.value)}
                 required
               ></input>
             </div>
@@ -110,7 +109,7 @@ function Register() {
               <b>Senha</b>
               <input
                 type="password"
-                onChange={(e) => user.password = e.target.value}
+                onChange={(e) => (user.password = e.target.value)}
                 required
                 placeholder="|"
               ></input>

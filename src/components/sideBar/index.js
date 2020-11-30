@@ -9,19 +9,29 @@ function SideBar(props) {
   const button = document.getElementById("container");
 
   page.addEventListener("click", function () {
-    console.log("click2")
+    console.log("click2");
     props.onClose();
   });
 
   button.addEventListener("click", function () {
-    console.log("click")
+    console.log("click");
     props.onClose();
   });
 
   return ReactDOM.createPortal(
     <div className="SideBarOverlay">
       <div className="SideBar">
-        text
+        <ul>
+          <li>
+            <Link to="/">Inicio</Link>
+          </li>
+          <li>
+            <Link to="/aulas">Aulas</Link>
+          </li>
+          <li>
+            <Link to="/perfil">Perfil</Link>
+          </li>
+        </ul>
       </div>
     </div>,
     portalRoot
