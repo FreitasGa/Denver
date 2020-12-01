@@ -16,12 +16,14 @@ function Login() {
 
   function logar() {
     let token;
+    let sessionsMail;
 
     api.post("/sessions", user, cors()).then((res) => {
       console.log(res);
       console.log(res.data);
       token = res.data.token;
-
+      localStorage.setItem("token", token);
+  
       api.get("/auth", {headers: {authorization: `bearer ${token}`}}).then((res) => {
         console.log(res);
         console.log(res.data);
@@ -68,7 +70,7 @@ function Login() {
           Não tem uma conta? Cadastre-se!
         </Link>
         <Link className="toRegister">Esqueceu sua senha?</Link>
-        {state ? <Redirect to="/" /> : null}
+        {state ? <Redirect to="/" email={user.email} /> : <Redirect to="/login"/>}
       </div>
     </div>
   );

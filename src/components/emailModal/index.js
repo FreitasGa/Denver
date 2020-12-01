@@ -9,9 +9,8 @@ import ChangeImageIcon from "../../assets/ChangeImageIcon.png";
 
 function PerfilEditModal(props) {
   const [perfilImage, setPerfilImage] = useState(user.Image);
-  const [userName, setUserName] = useState(user.name);
-  const [userSurname, setUserSurname] = useState(user.surname);
-  const [userMail, setUserMail] = useState(user.mail);
+  const [userName, setUserName] = useState(props.name);
+  const [userMail, setUserMail] = useState(props.mail);
 
   const portalRoot = document.getElementById("portal-root");
 
@@ -30,9 +29,6 @@ function PerfilEditModal(props) {
   function confirmEdit() {
     user.Image = perfilImage;
     userName !== "" ? (user.name = userName) : (user.name = user.name);
-    userSurname !== ""
-      ? (user.surname = userSurname)
-      : (user.surname = user.surname);
     userMail !== "" ? (user.mail = userMail) : (user.mail = user.mail);
     props.onClose();
   }
@@ -83,19 +79,6 @@ function PerfilEditModal(props) {
                   maxlength="20"
                   onChange={(e) => {
                     setUserName(e.target.value);
-                  }}
-                ></input>
-              </div>
-            </li>
-            <li>
-              <div>
-                <b>Sobrenome</b>
-                <input
-                  type="text"
-                  value={userSurname}
-                  maxlength="20"
-                  onChange={(e) => {
-                    setUserSurname(e.target.value);
                   }}
                 ></input>
               </div>

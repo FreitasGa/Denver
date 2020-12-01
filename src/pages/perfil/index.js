@@ -10,6 +10,8 @@ import "./styles.css";
 
 import perfilPreview2x from "../../assets/perfilPreview-2x.png";
 import emailEditor from "../../assets/emailEditor.png";
+import api from "../../services/api";
+import cors from "cors";
 
 function Perfil() {
   const [perfilEditOn, setPerfilEditOn] = useState(false);
@@ -25,6 +27,34 @@ function Perfil() {
   const totalPercentage = (count / data.length) * 100;
 
   const ClassCards = data.filter((card) => card.isSeen);
+
+  const [username, setUsername] = useState("Usuário");
+  const [usermail, setUsermail] = useState("usuario@mail.com")
+
+  function getUserData(){
+    let token;
+    const userToken = localStorage.getItem("token");
+
+    api.post("/sessions", {email: "pass@ex.com", password: "123123"}, cors()).then((res) => {
+      console.log(res);
+      console.log(res.data);
+      token = res.data.token;
+
+      api.get("/auth", {headers: {authorization: `bearer ${token}`}}).then((res) => {
+        console.log(res);
+        console.log(res.data);
+        
+        api.get("/users/currentuser", {headers: {authorization: `bearer ${userToken}`}}).then((res) => {
+          console.log(res);
+          console.log(res.data);
+          setUsername(res.data.name)
+          setUsermail(res.data.email)
+        })
+      });
+    })
+  }
+
+  window.addEventListener("load", getUserData())
 
   const filteredClassCards = ClassCards.map((video) => (
     <ClassCard
@@ -59,15 +89,14 @@ function Perfil() {
             {perfilEditOn ? (
               <PerfilEditModal
                 id="overlay"
-                name={user.name}
-                surname={user.surname}
-                mail={user.mail}
+                name={username}
+                mail={usermail}
                 onClose={() => setPerfilEditOn(false)}
               />
             ) : null}
-            <b className="UserName">{user.name}</b>
-            <div>
-              <b className="UserEmail">{user.mail}</b>
+            <b className="UserName">{username}</b>
+            <div className="containerUserMail">
+              <b className="UserEmail">{usermail}</b>
               <img
                 onClick={() => setPerfilEditOn(true)}
                 alt="email-editor"

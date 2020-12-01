@@ -10,6 +10,8 @@ import "./styles.css";
 import logo from "../../assets/Logo.png";
 import perfil from "../../assets/Perfil.png";
 import perfilPreview from "../../assets/perfilPreview.png";
+import api from "../../services/api";
+import cors from "cors"
 
 function Header() {
   const [IsPerfilVisible, setIsPerfilVisible] = useState(false);
@@ -17,7 +19,31 @@ function Header() {
   const [SearchField, setSearchField] = useState("");
   const [SideBarOn, setSideBarOn] = useState(false);
 
-  function changeClassName() {}
+  const [username, setUsername] = useState("Usuário");
+
+  function getUserData(){
+    let token;
+    const userToken = localStorage.getItem("token");
+
+    api.post("/sessions", {email: "pass@ex.com", password: "123123"}, cors()).then((res) => {
+      console.log(res);
+      console.log(res.data);
+      token = res.data.token;
+
+      api.get("/auth", {headers: {authorization: `bearer ${token}`}}).then((res) => {
+        console.log(res);
+        console.log(res.data);
+        
+        api.get("/users/currentuser", {headers: {authorization: `bearer ${userToken}`}}).then((res) => {
+          console.log(res);
+          console.log(res.data);
+          setUsername(res.data.name)
+        })
+      });
+    })
+  }
+
+  window.addEventListener("load", getUserData())
 
   return (
     <div className="Header">
@@ -58,7 +84,7 @@ function Header() {
           </div>
           {IsPerfilVisible ? (
             <PerfilModal
-              username={user.name}
+              username={username}
               profile={user.Image}
               onClose={() => setIsPerfilVisible(false)}
             />

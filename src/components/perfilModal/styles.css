@@ -9,7 +9,7 @@
 }
 
 .modal{
-    width: 360px;
+    width: fit-content;
     height: min-content;
     padding: 15px 25px;
     border: none;
@@ -64,6 +64,7 @@
     position: relative;
     overflow: hidden;
     border-radius: 50%;
+    margin-left: 12px;
 }
 
 .ImagePreviewCropper img{

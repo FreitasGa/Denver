@@ -55,11 +55,16 @@
   width: auto;
   cursor: pointer;
 }
+
 .UserName {
   font-weight: normal;
   font-size: 50px;
   color: #fa7e32;
   margin-bottom: -15px;
+}
+
+.containerUserMail{
+  margin-top: 10px;
 }
 
 .UserEmail {
