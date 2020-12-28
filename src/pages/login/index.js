@@ -19,13 +19,10 @@ function Login() {
     let sessionsMail;
 
     api.post("/sessions", user, cors()).then((res) => {
-      console.log(res);
-      console.log(res.data);
       token = res.data.token;
-      localStorage.setItem("token", token);
+      localStorage.setItem("userToken", token);
   
       api.get("/auth", {headers: {authorization: `bearer ${token}`}}).then((res) => {
-        console.log(res);
         console.log(res.data);
         if(res.data === "Authenticated."){
           setState(true);

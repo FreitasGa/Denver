@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import Header from "../../components/header";
-import VideoPreviewMainPage from "../../components/videoPreviewMainPage";
+import VideoPreviewMainPage from "../../components/videoPreview_MainPage";
 import data from "../../videoData";
 import user from "../../userData";
 import cors from "cors";
@@ -13,30 +13,32 @@ import rightArrow from "../../assets/right-arrow.png";
 import playButton from "../../assets/playButton.png";
 import lockButton from "../../assets/lockButton.png";
 
-function MainPage() {
-  const [user, setUser] = useState("Usuário");
+function getUserData(){
+  let admToken;
+  const userToken = localStorage.getItem("userToken");
 
-  function getUserData(){
-    let token;
-    const userToken = localStorage.getItem("token");
+  api.post("/sessions", {email: "pass@ex.com", password: "123123"}, cors()).then((res) => {
+    console.log(res.data);
+    admToken = res.data.token;
+    localStorage.setItem("admToken", admToken);
 
-    api.post("/sessions", {email: "pass@ex.com", password: "123123"}, cors()).then((res) => {
-      console.log(res);
+    api.get("/auth", {headers: {authorization: `bearer ${admToken}`}}).then((res) => {
       console.log(res.data);
-      token = res.data.token;
-
-      api.get("/auth", {headers: {authorization: `bearer ${token}`}}).then((res) => {
-        console.log(res);
-        console.log(res.data);
         
-        api.get("/users/currentuser", {headers: {authorization: `bearer ${userToken}`}}).then((res) => {
-          console.log(res);
-          console.log(res.data);
-          setUser(res.data.name)
-        })
-      });
-    })
-  }
+      api.get("/users/currentuser", {headers: {authorization: `bearer ${userToken}`}}).then((res) => {
+        console.log(res.data);
+        localStorage.setItem("username", res.data.name);
+        localStorage.setItem("useremail", res.data.email);
+      })
+    });
+  })
+}
+
+window.addEventListener('load', getUserData());
+
+function MainPage() {
+
+  const userName = localStorage.getItem("username");
 
   function goToLeft() {
     document.getElementById("videoContainer").scrollLeft -= 276;
@@ -57,14 +59,12 @@ function MainPage() {
     />
   ));
 
-  window.addEventListener('load', getUserData());
-
   return (
     <div className="MainPage">
       <Header />
       <div className="MainPageBody">
         <div className="greetings">
-          <b className="greet">Bem vindo, {user}.</b>
+          <b className="greet">Bem vindo, {userName}.</b>
           <b className="mainText">Seja o próprio terapeuta do seu filho!</b>
           <b className="subText">
             Aprenda como realizar terapia ocupacional utilizando o Modelo Denver

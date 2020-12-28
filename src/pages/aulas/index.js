@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../../components/header";
-import VideoPreviewAulas from "../../components/videoPreviewAulas";
+import VideoPreviewAulas from "../../components/videoPreview_aulas";
 import data from "../../videoData";
 import "./styles.css";
 

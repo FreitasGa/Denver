@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { Link } from "react-router-dom";
-import PerfilModal from "../perfilModal";
-import SuggestionsModal from "../suggestionsModal";
+import PerfilModal from "../headerPerfil";
+import SuggestionsModal from "../seachbarSuggestions";
 import SideBar from "../sideBar"
 import user from "../../userData";
 import "./styles.css";
@@ -19,31 +19,7 @@ function Header() {
   const [SearchField, setSearchField] = useState("");
   const [SideBarOn, setSideBarOn] = useState(false);
 
-  const [username, setUsername] = useState("Usuário");
-
-  function getUserData(){
-    let token;
-    const userToken = localStorage.getItem("token");
-
-    api.post("/sessions", {email: "pass@ex.com", password: "123123"}, cors()).then((res) => {
-      console.log(res);
-      console.log(res.data);
-      token = res.data.token;
-
-      api.get("/auth", {headers: {authorization: `bearer ${token}`}}).then((res) => {
-        console.log(res);
-        console.log(res.data);
-        
-        api.get("/users/currentuser", {headers: {authorization: `bearer ${userToken}`}}).then((res) => {
-          console.log(res);
-          console.log(res.data);
-          setUsername(res.data.name)
-        })
-      });
-    })
-  }
-
-  window.addEventListener("load", getUserData())
+  const userName = localStorage.getItem("username");
 
   return (
     <div className="Header">
@@ -84,7 +60,7 @@ function Header() {
           </div>
           {IsPerfilVisible ? (
             <PerfilModal
-              username={username}
+              username={userName}
               profile={user.Image}
               onClose={() => setIsPerfilVisible(false)}
             />

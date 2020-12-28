@@ -7,7 +7,20 @@ import "./styles.css";
 
 import playButton from "../../assets/playButton.png";
 import lockButton from "../../assets/lockButton.png";
-import QuestionarioModal from "../../components/questionarioModal";
+import QuestionarioModal from "../../components/questions";
+import api from "../../services/api";
+import cors from "cors";
+
+function getVideo(){
+  console.log("> getVideo:")
+
+  api.get("/lessons", {headers: {authorization: `bearer ${localStorage.getItem("userToken")}`}}).then((res) => {
+    console.log(res);
+    console.log(res.data);
+  })
+}
+
+window.addEventListener('load', getVideo());
 
 function Video() {
   const [questModalOn, setQuestModalOn] = useState(false);
