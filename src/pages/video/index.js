@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import Youtube from "react-youtube";
 import Header from "../../components/header";
 import VideoPreview from "../../components/videoPreview";
@@ -11,23 +11,25 @@ import QuestionarioModal from "../../components/questions";
 import api from "../../services/api";
 import cors from "cors";
 
-function getVideo(){
-  const userToken = localStorage.getItem("userToken");
-  api.get("/lessons/:id", {headers: {authorization: `bearer ${userToken}`}}).then((res) => {
-    console.log(res.data);
-    localStorage.setItem("title", res.data.title);
-    localStorage.setItem("description", res.data.description);
-    localStorage.setItem("video", res.data.video);
-  })
-}
-
-window.addEventListener('load', getVideo());
-
-const title = localStorage.getItem("title");
-const description = localStorage.getItem("description");
 
 function Video() {
+  const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');
+  const [video, setVideo] = useState('');
+  
+  const getVideo = useCallback(() => {
+    const userToken = localStorage.getItem("userToken");
+    api.get("/lessons/:id", {headers: {authorization: `bearer ${userToken}`}}).then((res) => {
+      setTitle(req.data.title);
+      setDescription(req.data.description);
+      setVideo(req.data.video);
+    })
+  }, []);
+
+  window.addEventListener('load', getVideo);
+
   const [questModalOn, setQuestModalOn] = useState(false);
+
   const Videos = data.map((video) => (
     <VideoPreview
       key={video.id}
@@ -48,8 +50,7 @@ function Video() {
     },
   };
 
-  const videoUrl = localStorage.getItem("video");  
-  const videoId = videoUrl.slice(32, 43);
+  const videoId = video.slice(32, 43);
 
   function onPlayerReady(e) {
     e.target.pauseVideo();
