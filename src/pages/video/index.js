@@ -12,7 +12,7 @@ import api from "../../services/api";
 import cors from "cors";
 
 function getVideo(){
-  api.get("/lessons/:id").then((res) => {
+  api.get("/lessons/:id", {headers: {authorization: `bearer ${admToken}`}}).then((res) => {
     localStorage.setItem("title", res.data.title);
     localStorage.setItem("description", res.data.description);
     localStorage.setItem("video", res.data.video);
