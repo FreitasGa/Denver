@@ -20,9 +20,10 @@ function Video() {
   const getVideo = useCallback(() => {
     const userToken = localStorage.getItem("userToken");
     api.get("/lessons/:id", {headers: {authorization: `bearer ${userToken}`}}).then((res) => {
-      setTitle(req.data.title);
-      setDescription(req.data.description);
-      setVideo(req.data.video);
+      console.log(res);
+      setTitle(res.data.title);
+      setDescription(res.data.description);
+      setVideo(res.data.video);
     })
   }, []);
 
