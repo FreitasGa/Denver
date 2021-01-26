@@ -12,15 +12,17 @@ import api from "../../services/api";
 import cors from "cors";
 
 function getVideo(){
-  console.log("> getVideo:")
-
-  api.get("/lessons", {headers: {authorization: `bearer ${localStorage.getItem("userToken")}`}}).then((res) => {
-    console.log(res);
-    console.log(res.data);
+  api.get("/lessons/:id").then((res) => {
+    localStorage.setItem("title", res.data.title);
+    localStorage.setItem("description", res.data.description);
+    localStorage.setItem("video", res.data.video);
   })
 }
 
 window.addEventListener('load', getVideo());
+
+const title = localStorage.getItem("title");
+const description = localStorage.getItem("description");
 
 function Video() {
   const [questModalOn, setQuestModalOn] = useState(false);
@@ -44,8 +46,7 @@ function Video() {
     },
   };
 
-  const videoUrl =
-    "https://www.youtube.com/watch?v=2g811Eo7K8U&feature=emb_logo&ab_channel=detachedsoul21";
+  const videoUrl = localStorage.getItem("video");  
   const videoId = videoUrl.slice(32, 43);
 
   function onPlayerReady(e) {
@@ -79,8 +80,8 @@ function Video() {
       <Header />
       <div className="VideoBody">
         <div className="PlayerOverlay">
-          <b className="PlayerVideoAula">Aula 01</b>
-          <b className="PlayerVideoTitle">TITULO DA AULA</b>
+          <b className="PlayerVideoAula">{title}</b>
+          <b className="PlayerVideoTitle">{description}</b>
           <Youtube className="Player" videoId={videoId} opts={opts} onReady={onPlayerReady} />
           <button onClick={() => setQuestModalOn(!questModalOn)}>Test</button>
           {questModalOn ? (
