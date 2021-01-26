@@ -12,7 +12,8 @@ import api from "../../services/api";
 import cors from "cors";
 
 function getVideo(){
-  api.get("/lessons/:id", {headers: {authorization: `bearer ${admToken}`}}).then((res) => {
+  const userToken = localStorage.getItem("userToken");
+  api.get("/lessons/:id", {headers: {authorization: `bearer ${userToken}`}}).then((res) => {
     localStorage.setItem("title", res.data.title);
     localStorage.setItem("description", res.data.description);
     localStorage.setItem("video", res.data.video);
