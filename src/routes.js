@@ -29,8 +29,7 @@ function Routes() {
         <Route path="/login" component={Login} />
         <PrivateRoute path="/perfil" component={Perfil} />
         <PrivateRoute path="/aulas" component={Aulas} />
-        <PrivateRoute path="/lessons/1" component={Video} />
-        <PrivateRoute path="/lessons/2" component={Video} />
+        <PrivateRoute path="/lessons" component={Video} />
         <Route path="/landing" component={LandingPage} />
         <PrivateRoute path="/questionario" component={Questionario} />
       </Switch>
