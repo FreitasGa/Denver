@@ -12,7 +12,7 @@ function SuggestionsModal(props) {
     items.title.toLowerCase().includes(props.search.toLowerCase())
   );
   const filteredSuggestions = Suggestions.map((video) => (
-    <Link key={video.id} to="/video">
+    <Link key={video.id} to={`/aula/${video.id}`}>
       {video.title}
     </Link>
   ));

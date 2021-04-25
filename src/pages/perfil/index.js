@@ -18,20 +18,20 @@ function Perfil() {
 
   let count = 0;
 
-  for (let i = 0; i < data.length; i++) {
+  /*for (let i = 0; i < data.length; i++) {
     if (data[i].isQualified) {
       count++;
     }
-  }
+  }*/
 
-  const totalPercentage = (count / data.length) * 100;
+  /*const totalPercentage = (count / data.length) * 100;*/
 
-  const ClassCards = data.filter((card) => card.isSeen);
+  /*const ClassCards = data.filter((card) => card.isSeen);*/
 
   const userName = localStorage.getItem("username");
   const userEmail = localStorage.getItem("useremail");
 
-  const filteredClassCards = ClassCards.map((video) => (
+  /*const filteredClassCards = ClassCards.map((video) => (
     <ClassCard
       key={video.id}
       title={video.title}
@@ -44,7 +44,7 @@ function Perfil() {
       quest5={video.Quest5}
       isSeen={video.isSeen}
     />
-  ));
+  ));*/
 
   return (
     <div className="Perfil">
@@ -83,7 +83,7 @@ function Perfil() {
             <b className="ProgressTitle">PROGRESSO</b>
             <ProgressRing
               size={200}
-              progress={totalPercentage}
+              progress="."
               strokeWidth={18}
               circleOneStroke="#B5B5B5"
               circleTwoStroke="#00A2D8"
@@ -93,7 +93,7 @@ function Perfil() {
           <div className="Line2"></div>
           <div className="PartB">
             <b className="HistoricTitle">HISTÓRICO DE AULAS</b>
-            <ul>{filteredClassCards}</ul>
+            <ul>.</ul>
           </div>
         </div>
       </div>

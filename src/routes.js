@@ -6,7 +6,7 @@ import Register from "./pages/registro";
 import Login from "./pages/login";
 import Perfil from "./pages/perfil";
 import Aulas from "./pages/aulas";
-import Video from "./pages/video";
+import Aula from "./pages/aula";
 import LandingPage from "./pages/landing-page";
 import Questionario from "./pages/questionario";
 
@@ -29,7 +29,7 @@ function Routes() {
         <Route path="/login" component={Login} />
         <PrivateRoute path="/perfil" component={Perfil} />
         <PrivateRoute path="/aulas" component={Aulas} />
-        <PrivateRoute path="/lessons" component={Video} />
+        <PrivateRoute path="/aula/:id" component={Aula} />
         <Route path="/landing" component={LandingPage} />
         <PrivateRoute path="/questionario" component={Questionario} />
       </Switch>

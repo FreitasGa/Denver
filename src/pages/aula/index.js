@@ -1,4 +1,5 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
+import { useParams } from 'react-router-dom';
 import Youtube from "react-youtube";
 import Header from "../../components/header";
 import VideoPreview from "../../components/videoPreview";
@@ -12,26 +13,25 @@ import api from "../../services/api";
 import cors from "cors";
 
 
-function Video() {
+function Aula() {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [video, setVideo] = useState('');
+  const params = useParams();
   
   const getVideo = useCallback(() => {
     const userToken = localStorage.getItem("userToken");
-    api.get("/lessons/:id", {headers: {authorization: `bearer ${userToken}`}}).then((res) => {
-      console.log(res);
+    api.get(`/lessons/${params.id}`, {headers: {authorization: `bearer ${userToken}`}}).then((res) => {
       setTitle(res.data.title);
       setDescription(res.data.description);
       setVideo(res.data.video);
     })
   }, []);
-
-  window.addEventListener('load', getVideo);
+  
+  useEffect(() => { getVideo(); } , [getVideo]);
 
   const [questModalOn, setQuestModalOn] = useState(false);
-
-  const Videos = data.map((video) => (
+  /*const Videos = lessons.map((video) => (
     <VideoPreview
       key={video.id}
       title={video.title}
@@ -40,7 +40,7 @@ function Video() {
       button={video.isLocked ? lockButton : playButton}
       image={null}
     />
-  ));
+  ));*/
 
   const opts = {
     height: "585",
@@ -51,7 +51,7 @@ function Video() {
     },
   };
 
-  const videoId = video.slice(32, 43);
+  const videoId = video.slice(17, 28);
 
   function onPlayerReady(e) {
     e.target.pauseVideo();
@@ -97,11 +97,11 @@ function Video() {
         </div>
         <div className="VideoListOverlay">
           <b className="VideoListTitle">Aulas</b>
-          <ul className="VideoListBack">{Videos}</ul>
+          <ul className="VideoListBack">a</ul>
         </div>
       </div>
     </div>
   );
 }
 
-export default Video;
+export default Aula;

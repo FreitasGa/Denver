@@ -4,6 +4,7 @@ import { Link, Redirect } from "react-router-dom";
 import cors from "cors";
 import "./styles.css";
 
+
 import perfilPreview from "../../assets/perfilPreview.png";
 import quit from "../../assets/quit.png";
 import api from "../../services/api";
@@ -27,7 +28,7 @@ function PerfilModal(props) {
       <div className="modal">
         <div className="texts">
           <b>VOCÊ ESTÁ LOGADO COMO</b>
-          <b className="username"> {props.username} </b>
+          <Link to="/perfil"><b className="username"> {props.username} </b></Link>
           <button className="quit" onClick={logout}>
             <img alt="QuitButton" src={quit}></img>SAIR
           </button>

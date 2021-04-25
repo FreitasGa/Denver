@@ -8,7 +8,7 @@ import playButton from "../../assets/playButton.png";
 import lockButton from "../../assets/lockButton.png";
 
 function Aulas() {
-  const Aulas = data.map((video) => (
+  /*const Aulas = data.map((video) => (
     <VideoPreviewAulas
       key={video.id}
       title={video.title}
@@ -17,7 +17,7 @@ function Aulas() {
       button={video.isLocked ? lockButton : playButton}
       image={null}
     />
-  ));
+  ));*/
 
   return (
     <div className="Aulas">

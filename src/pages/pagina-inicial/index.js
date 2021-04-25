@@ -1,7 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import Header from "../../components/header";
 import VideoPreviewMainPage from "../../components/videoPreview_MainPage";
-import data from "../../videoData";
 import user from "../../userData";
 import cors from "cors";
 import api from "../../services/api";
@@ -13,30 +12,28 @@ import rightArrow from "../../assets/right-arrow.png";
 import playButton from "../../assets/playButton.png";
 import lockButton from "../../assets/lockButton.png";
 
+var data;
+
 function getUserData(){
-  let admToken;
   const userToken = localStorage.getItem("userToken");
-
-  api.post("/sessions", {email: "pass@ex.com", password: "123123"}, cors()).then((res) => {
-    console.log(res.data);
-    admToken = res.data.token;
-    localStorage.setItem("admToken", admToken);
-
-    api.get("/auth", {headers: {authorization: `bearer ${admToken}`}}).then((res) => {
-      console.log(res.data);
-        
-      api.get("/users/currentuser", {headers: {authorization: `bearer ${userToken}`}}).then((res) => {
-        console.log(res.data);
-        localStorage.setItem("username", res.data.name);
-        localStorage.setItem("useremail", res.data.email);
-      })
-    });
+  api.get("/users/currentuser", {headers: {authorization: `bearer ${userToken}`}}).then((res) => {
+    localStorage.setItem("username", res.data.name);
+    localStorage.setItem("useremail", res.data.email);
   })
 }
 
-window.addEventListener('load', getUserData());
+function getVideoData(){
+  const userToken = localStorage.getItem("userToken");  
+
+  api.get("/lessons", {headers: {authorization: `bearer ${userToken}`}}).then((res) => {
+    data = res.data;
+    console.log(data);
+  });
+}
 
 function MainPage() {
+  useEffect(() => {getUserData()},[getUserData]);
+  useEffect(() => {getVideoData()},[getVideoData]);
 
   const userName = localStorage.getItem("username");
 
@@ -48,7 +45,7 @@ function MainPage() {
     document.getElementById("videoContainer").scrollLeft += 276;
   }
 
-  const VideosMainPage = data.map((video) => (
+  /*const VideosMainPage = data.map((video) => (
     <VideoPreviewMainPage
       key={video.id}
       title={video.title}
@@ -57,7 +54,7 @@ function MainPage() {
       button={video.isLocked ? lockButton : playButton}
       image={null}
     />
-  ));
+  ));*/
 
   return (
     <div className="MainPage">
@@ -79,7 +76,7 @@ function MainPage() {
         <button id="slideLeft" className="slideLeft" onClick={goToLeft}>
           <img alt="previous" src={leftArrow}></img>
         </button>
-        <ul id="videoContainer">{VideosMainPage}</ul>
+        <ul id="videoContainer">:)</ul>
         <button id="slideRight" className="slideRight" onClick={goToRight}>
           <img alt="next" src={rightArrow}></img>
         </button>

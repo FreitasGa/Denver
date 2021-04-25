@@ -6,20 +6,35 @@ import SuggestionsModal from "../seachbarSuggestions";
 import SideBar from "../sideBar"
 import user from "../../userData";
 import "./styles.css";
+import onClickOutside from 'react-onclickoutside';
 
 import logo from "../../assets/Logo.png";
 import perfil from "../../assets/Perfil.png";
 import perfilPreview from "../../assets/perfilPreview.png";
 import api from "../../services/api";
 import cors from "cors"
+import { useEffect } from "react";
 
 function Header() {
   const [IsPerfilVisible, setIsPerfilVisible] = useState(false);
+  const [ClickPic, setClickPic] = useState(true);
   const [SuggestionsOn, setSuggestionsOn] = useState(false);
   const [SearchField, setSearchField] = useState("");
   const [SideBarOn, setSideBarOn] = useState(false);
 
   const userName = localStorage.getItem("username");
+  
+  useEffect(() => { 
+    console.log(IsPerfilVisible) }
+  , [IsPerfilVisible]);
+
+  const clickOutside = () =>{
+    if(!ClickPic){
+      setIsPerfilVisible(false);
+    }
+  };
+
+  const Perfil = onClickOutside(PerfilModal, clickOutside);
 
   return (
     <div className="Header">
@@ -41,9 +56,6 @@ function Header() {
             <li>
               <Link to="/aulas">Aulas</Link>
             </li>
-            <li>
-              <Link to="/perfil">Perfil</Link>
-            </li>
           </ul>
           <input
             className="searchbox"
@@ -54,12 +66,15 @@ function Header() {
           ></input>
           <div
             className="perfil-imageCropper"
-            onClick={() => setIsPerfilVisible(!IsPerfilVisible)}
+            onClick={() => {
+              setIsPerfilVisible(!IsPerfilVisible); 
+              setClickPic(true);
+            }}
           >
             <img src={user.Image} className="perfil-image" alt="logo"></img>
           </div>
           {IsPerfilVisible ? (
-            <PerfilModal
+            <Perfil
               username={userName}
               profile={user.Image}
               onClose={() => setIsPerfilVisible(false)}
